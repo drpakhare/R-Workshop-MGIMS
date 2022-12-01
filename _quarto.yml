@@ -35,7 +35,9 @@ website:
      - href: index.qmd
        text: Home
      - href: material.qmd
+       text: Slides
      - href: dataset.qmd
+     - href: resources.qmd
      - href: license.qmd
 
 format:

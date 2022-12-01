@@ -1,1 +1,1 @@
-Sitemap: https://703637b5-ee16-4446-8609-e34c79975aea.netlify.app/sitemap.xml
+Sitemap: https://quartopub.com/sites/cfm-workshops/public-health-data-tabulation-with-gtsummary/sitemap.xml

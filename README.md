@@ -1,18 +1,17 @@
-# Clinical Reporting with {gtsummary}
+# Public Health Data Tabulation with {gtsummary}
 
-### R/Medicine 2022 Workshop
+### R for Public Health Workshop at MGIMS , Wardha
 
-by Daniel D. Sjoberg
-
-------------------------------------------------------------------------
-
-:spiral_calendar: August 23, 2022 | 11:00am - 2:00pm EDT\
-:hotel: Virtual \
-:sassy_man: **FREE** with [conference registration](https://events.linuxfoundation.org/r-medicine/register/) (between $10 and $50)
+by Abhijit P Pakhare
 
 ------------------------------------------------------------------------
 
-This repository contains materials for the "Clinical Reporting with {gtsummary}" workshop at R/Medicine 2022. See [https://www.danieldsjoberg.com/R-Med-gtsummary-workshop/](https://www.danieldsjoberg.com/R-Med-gtsummary-workshop/) for rendered workshop materials.
+:spiral_calendar: December 2, 2022 \| 10:00am - 2:00pm IST\
+:hotel: Offline
+
+------------------------------------------------------------------------
+
+This repository contains materials for the "Public Health Data Tabulation with {gtsummary}" at R for Public Health Workshop held at MGIMS, Sewagram. See <https://cfm-workshops.quarto.pub/public-health-data-tabulation-with-gtsummary/> for rendered workshop materials.
 
 ------------------------------------------------------------------------
 

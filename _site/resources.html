@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Public Health Data Tabulation with {gtsummary}</title>
+<title>Public Health Data Tabulation with {gtsummary} - Additional Resources</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +24,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./material.html" rel="next">
+<link href="./license.html" rel="next">
+<link href="./dataset.html" rel="prev">
 <link href="./images/trans - gt.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -56,8 +57,8 @@ ul.task-list{list-style: none;}
 }</script>
 
 
-<meta property="og:title" content="Public Health Data Tabulation with {gtsummary}">
-<meta property="og:description" content="R for Public Health Workshop (MGIMS Sevagram)">
+<meta property="og:title" content="Public Health Data Tabulation with {gtsummary} - Additional Resources">
+<meta property="og:description" content="Swirl tutorials">
 <meta property="og:site-name" content="Public Health Data Tabulation with {gtsummary}">
 </head>
 
@@ -67,7 +68,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Public Health Data Tabulation with {gtsummary}</h1>
+      <h1 class="quarto-secondary-nav-title">Additional Resources</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -95,17 +96,22 @@ ul.task-list{list-style: none;}
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Home</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Home</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./material.html" class="sidebar-item-text sidebar-link">Material</a>
+  <a href="./material.html" class="sidebar-item-text sidebar-link">Slides</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dataset.html" class="sidebar-item-text sidebar-link">Dataset</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.html" class="sidebar-item-text sidebar-link active">Additional Resources</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -122,22 +128,34 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <li><a href="#online-books" id="toc-online-books" class="nav-link active" data-scroll-target="#online-books">Online Books</a>
   <ul class="collapse">
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
-  <li><a href="#speaker" id="toc-speaker" class="nav-link" data-scroll-target="#speaker">Speaker</a></li>
-  <li><a href="#package-creator-slides-from-his-original-presentation-are-modified-for-this-workshop" id="toc-package-creator-slides-from-his-original-presentation-are-modified-for-this-workshop" class="nav-link" data-scroll-target="#package-creator-slides-from-his-original-presentation-are-modified-for-this-workshop">Package Creator (Slides from his original presentation are modified for this workshop)</a></li>
+  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis">Data analysis</a></li>
+  <li><a href="#biostatistics" id="toc-biostatistics" class="nav-link" data-scroll-target="#biostatistics">Biostatistics</a></li>
+  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">Visualization</a></li>
+  <li><a href="#interactivity" id="toc-interactivity" class="nav-link" data-scroll-target="#interactivity">Interactivity</a></li>
   </ul></li>
+  <li><a href="#tutorials" id="toc-tutorials" class="nav-link" data-scroll-target="#tutorials">Tutorials</a></li>
+  <li><a href="#cheatsheets" id="toc-cheatsheets" class="nav-link" data-scroll-target="#cheatsheets">Cheatsheets</a></li>
+  <li><a href="#visualization-other-resources" id="toc-visualization-other-resources" class="nav-link" data-scroll-target="#visualization-other-resources">Visualization other resources</a>
+  <ul class="collapse">
+  <li><a href="#ggplot2-extensions" id="toc-ggplot2-extensions" class="nav-link" data-scroll-target="#ggplot2-extensions">ggplot2 Extensions</a></li>
+  <li><a href="#graph-gallery-and-chart-types" id="toc-graph-gallery-and-chart-types" class="nav-link" data-scroll-target="#graph-gallery-and-chart-types">Graph Gallery and chart types</a></li>
+  <li><a href="#plotting-by-drag-and-drop" id="toc-plotting-by-drag-and-drop" class="nav-link" data-scroll-target="#plotting-by-drag-and-drop">Plotting by drag and drop</a></li>
+  <li><a href="#graphs-and-statistics-details-on-same-plot" id="toc-graphs-and-statistics-details-on-same-plot" class="nav-link" data-scroll-target="#graphs-and-statistics-details-on-same-plot">Graphs and statistics details on same plot</a></li>
+  </ul></li>
+  <li><a href="#rmarkdown-and-other" id="toc-rmarkdown-and-other" class="nav-link" data-scroll-target="#rmarkdown-and-other">RMarkdown and other</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
+  <li><a href="#tips-and-tricks" id="toc-tips-and-tricks" class="nav-link" data-scroll-target="#tips-and-tricks">Tips and tricks</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/drpakhare/r-workshop-mgims/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/drpakhare/r-workshop-mgims/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/drpakhare/r-workshop-mgims/edit/main/resources.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/drpakhare/r-workshop-mgims/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Public Health Data Tabulation with {gtsummary}</h1>
-<p class="subtitle lead">R for Public Health Workshop (MGIMS Sevagram)</p>
+<h1 class="title d-none d-lg-block">Additional Resources</h1>
 </div>
 
 
@@ -151,32 +169,77 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<!-- https://github.com/rstudio-conf-2022/teach-ds -->
-<hr>
-<p>🗓 December 2, 2022 | 10:00am - 2:00pm IST</p>
-<section id="overview" class="level1">
-<h1>Overview</h1>
-<p>The <a href="https://www.danieldsjoberg.com/gtsummary/"><strong>gtsummary</strong></a> package provides an elegant and flexible way to create publication-ready summary tables in <strong>R</strong>. A critical part of the work of statisticians, data scientists, and analysts is summarizing data sets and regression models in R and publishing or sharing polished summary tables. The <a href="https://www.danieldsjoberg.com/gtsummary/"><strong>gtsummary</strong></a> package was created to streamline these everyday analysis tasks by allowing users to easily create reproducible summaries of data sets, regression models, survey data, and survival data with a simple interface and very little code. The package follows a tidy framework, making it easy to integrate with standard data workflows, and offers many table customization features through function arguments, helper functions, and custom themes.</p>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
-<p>Build, customize, and report tables often found in public health journals and other public health related documents such as working papers and technical reports.</p>
+<section id="online-books" class="level2">
+<h2 class="anchored" data-anchor-id="online-books">Online Books</h2>
+<section id="data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="data-analysis">Data analysis</h3>
+<p><a href="https://r4ds.had.co.nz">R for Data Science</a></p>
+<p><a href="https://epirhandbook.com/en/index.html">The Epidemiologist R Handbook</a></p>
+<p><a href="https://bookdown.org/pdr_higgins/rmrwr/">Reproducible Medical Research with R</a></p>
+<p><a href="https://dcl-wrangle.stanford.edu">Data Wrangling</a></p>
+<p><a href="http://rafalab.dfci.harvard.edu/dsbook/">Introduction to Data Science</a></p>
 </section>
-<section id="speaker" class="level2">
-<h2 class="anchored" data-anchor-id="speaker">Speaker</h2>
-<p><strong>Dr Abhijit P Pakhare,</strong></p>
-<p>Associate Professor,</p>
-<p>Community and Family Medicine,</p>
-<p>All India Institute of Medical Sciences, Bhopal,</p>
-<p>Madhya Pradesh, India</p>
-<p>Email- abhijit.cfm@aiimsbhopal.edu.in</p>
+<section id="biostatistics" class="level3">
+<h3 class="anchored" data-anchor-id="biostatistics">Biostatistics</h3>
+<p><a href="http://hbiostat.org/bbr/">Biostatistics for Biomedical Research</a></p>
 </section>
-<section id="package-creator-slides-from-his-original-presentation-are-modified-for-this-workshop" class="level2">
-<h2 class="anchored" data-anchor-id="package-creator-slides-from-his-original-presentation-are-modified-for-this-workshop">Package Creator (Slides from his original presentation are modified for this workshop)</h2>
-<p><img src="images/dan-circle.png" class="img-fluid" style="float:right;padding: 0 0 0 10px;" alt="Headshot of Daniel D. Sjoberg" width="200"></p>
-<p><a href="https://www.danieldsjoberg.com/"><strong>Daniel D. Sjoberg</strong></a> (he/him) is a Senior Biostatistician at Memorial Sloan Kettering Cancer Center in New York City and a DrPH candidate in Biostatistics at Columbia University. His research interests include adaptive methods in clinical trials, precision medicine, and predictive modeling. He also enjoys R package development, creating many packages available on <a href="https://cran.r-project.org/web/packages/">CRAN</a>, <a href="https://ddsjoberg.r-universe.dev/ui#packages">R-Universe</a>, <a href="https://github.com/ddsjoberg">GitHub</a>, and internally at MSKCC. Daniel is the winner of the 2021 American Statistical Association (ASA) Innovation in Statistical Programming and Analytics award.</p>
+<section id="visualization" class="level3">
+<h3 class="anchored" data-anchor-id="visualization">Visualization</h3>
+<p><a href="https://clauswilke.com/dataviz/">Fundamentals of Data Visualization</a></p>
+<p><a href="https://ggplot2-book.org">ggplot2: Elegant Graphics for Data Analysis</a></p>
+</section>
+<section id="interactivity" class="level3">
+<h3 class="anchored" data-anchor-id="interactivity">Interactivity</h3>
+<p><a href="https://mastering-shiny.org/index.html">Mastering Shiny</a></p>
+</section>
+</section>
+<section id="tutorials" class="level2">
+<h2 class="anchored" data-anchor-id="tutorials">Tutorials</h2>
+<p><a href="https://swirlstats.com">Swirl tutorials</a></p>
+<p><a href="https://rstudio.cloud/learn/primers">RStudio Primers</a></p>
+<p><a href="https://cedricscherer.netlify.app/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/">ggplot2 tutorial</a></p>
+</section>
+<section id="cheatsheets" class="level2">
+<h2 class="anchored" data-anchor-id="cheatsheets">Cheatsheets</h2>
+<p><a href="https://www.rstudio.com/resources/cheatsheets/">RStudio Cheatsheets</a></p>
+</section>
+<section id="visualization-other-resources" class="level2">
+<h2 class="anchored" data-anchor-id="visualization-other-resources">Visualization other resources</h2>
+<section id="ggplot2-extensions" class="level3">
+<h3 class="anchored" data-anchor-id="ggplot2-extensions">ggplot2 Extensions</h3>
+<p><a href="https://exts.ggplot2.tidyverse.org/">ggplot2 extensions</a></p>
+</section>
+<section id="graph-gallery-and-chart-types" class="level3">
+<h3 class="anchored" data-anchor-id="graph-gallery-and-chart-types">Graph Gallery and chart types</h3>
+<p><a href="https://www.r-graph-gallery.com/">The R Graph Gallery</a> <a href="https://www.data-to-viz.com/">From Data to Viz</a> by <a href="https://twitter.com/R_Graph_Gallery">Yan Holtz</a> and <a href="http://www.conor.fr/indexEN.html">Conor Healy</a></p>
+<p><a href="http://ft-interactive.github.io/visual-vocabulary/">Visual Vocabulary by FT</a> <a href="https://depictdatastudio.com/charts/">Interactive Chart Chooser</a> <a href="https://chart.guide/topics/chartguide-poster-4-0/">chart.guide</a></p>
+</section>
+<section id="plotting-by-drag-and-drop" class="level3">
+<h3 class="anchored" data-anchor-id="plotting-by-drag-and-drop">Plotting by drag and drop</h3>
+<p><a href="https://dreamrs.github.io/esquisse/">esquisse add-in</a></p>
+</section>
+<section id="graphs-and-statistics-details-on-same-plot" class="level3">
+<h3 class="anchored" data-anchor-id="graphs-and-statistics-details-on-same-plot">Graphs and statistics details on same plot</h3>
+<p><a href="https://indrajeetpatil.github.io/ggstatsplot/index.html">ggstatsplot: ggplot2 Based Plots with Statistical Details</a></p>
+</section>
+</section>
+<section id="rmarkdown-and-other" class="level2">
+<h2 class="anchored" data-anchor-id="rmarkdown-and-other">RMarkdown and other</h2>
+<p><a href="https://bookdown.org/yihui/rmarkdown-cookbook/">R Markdown Cookbook</a></p>
+<p><a href="https://bookdown.org/yihui/bookdown/">bookdown:Authoring Books and Technical Documents with R Markdown</a></p>
+<p><a href="https://bookdown.org/yihui/blogdown/">blogdown: Creating Websites with R Markdown</a></p>
+</section>
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+<p><a href="https://quarto.org">Quarto Website</a></p>
+<p><a href="https://jthomasmock.github.io/quarto-2hr-webinar/">Getting Started with Quarto</a></p>
+</section>
+<section id="tips-and-tricks" class="level2">
+<h2 class="anchored" data-anchor-id="tips-and-tricks">Tips and tricks</h2>
+<p><a href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts">Keyboard Shortcuts in the RStudio IDE</a></p>
+<p><a href="https://www.rstudio.com/blog/r-markdown-tips-tricks-4-looks-better-works-better/">Rmarkdown lesser-known tips and tricks</a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -279,10 +342,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./dataset.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Dataset</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./material.html" class="pagination-link">
-        <span class="nav-page-text">Material</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./license.html" class="pagination-link">
+        <span class="nav-page-text">License</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

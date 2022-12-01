@@ -21,6 +21,13 @@
     "text": "Learning objectives\nBuild, customize, and report tables often found in public health journals and other public health related documents such as working papers and technical reports."
   },
   {
+    "objectID": "index.html#speaker",
+    "href": "index.html#speaker",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Speaker",
+    "text": "Speaker\nDr Abhijit P Pakhare,\nAssociate Professor,\nCommunity and Family Medicine,\nAll India Institute of Medical Sciences, Bhopal,\nMadhya Pradesh, India\nEmail- abhijit.cfm@aiimsbhopal.edu.in"
+  },
+  {
     "objectID": "index.html#package-creator-slides-from-his-original-presentation-are-modified-for-this-workshop",
     "href": "index.html#package-creator-slides-from-his-original-presentation-are-modified-for-this-workshop",
     "title": "Public Health Data Tabulation with {gtsummary}",
@@ -40,6 +47,55 @@
     "title": "Material",
     "section": "",
     "text": "View slides in full screen"
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Additional Resources",
+    "section": "",
+    "text": "R for Data Science\nThe Epidemiologist R Handbook\nReproducible Medical Research with R\nData Wrangling\nIntroduction to Data Science\n\n\n\nBiostatistics for Biomedical Research\n\n\n\nFundamentals of Data Visualization\nggplot2: Elegant Graphics for Data Analysis\n\n\n\nMastering Shiny"
+  },
+  {
+    "objectID": "resources.html#tutorials",
+    "href": "resources.html#tutorials",
+    "title": "Additional Resources",
+    "section": "Tutorials",
+    "text": "Tutorials\nSwirl tutorials\nRStudio Primers\nggplot2 tutorial"
+  },
+  {
+    "objectID": "resources.html#cheatsheets",
+    "href": "resources.html#cheatsheets",
+    "title": "Additional Resources",
+    "section": "Cheatsheets",
+    "text": "Cheatsheets\nRStudio Cheatsheets"
+  },
+  {
+    "objectID": "resources.html#visualization-other-resources",
+    "href": "resources.html#visualization-other-resources",
+    "title": "Additional Resources",
+    "section": "Visualization other resources",
+    "text": "Visualization other resources\n\nggplot2 Extensions\nggplot2 extensions\n\n\nGraph Gallery and chart types\nThe R Graph Gallery From Data to Viz by Yan Holtz and Conor Healy\nVisual Vocabulary by FT Interactive Chart Chooser chart.guide\n\n\nPlotting by drag and drop\nesquisse add-in\n\n\nGraphs and statistics details on same plot\nggstatsplot: ggplot2 Based Plots with Statistical Details"
+  },
+  {
+    "objectID": "resources.html#rmarkdown-and-other",
+    "href": "resources.html#rmarkdown-and-other",
+    "title": "Additional Resources",
+    "section": "RMarkdown and other",
+    "text": "RMarkdown and other\nR Markdown Cookbook\nbookdown:Authoring Books and Technical Documents with R Markdown\nblogdown: Creating Websites with R Markdown"
+  },
+  {
+    "objectID": "resources.html#quarto",
+    "href": "resources.html#quarto",
+    "title": "Additional Resources",
+    "section": "Quarto",
+    "text": "Quarto\nQuarto Website\nGetting Started with Quarto"
+  },
+  {
+    "objectID": "resources.html#tips-and-tricks",
+    "href": "resources.html#tips-and-tricks",
+    "title": "Additional Resources",
+    "section": "Tips and tricks",
+    "text": "Tips and tricks\nKeyboard Shortcuts in the RStudio IDE\nRmarkdown lesser-known tips and tricks"
   },
   {
     "objectID": "slides/index.html#acknowledgements",
@@ -67,7 +123,7 @@
     "href": "slides/index.html#checklist",
     "title": "Public Health Data Tabulation with {gtsummary}",
     "section": "Checklist",
-    "text": "Checklist\n\n Install recent R release\nCurrent version 4.2.1\n Install RStudio\nI am on version 2022.07.1+554 \n Install packages\ninstall.packages(c(\"gtsummary\", \"tidyverse\", \"labelled\", \"usethis\", \"causaldata\", \"fs\", \"skimr\", \"car\", \"emmeans\"))\n Ensure you can knit Rmarkdown files"
+    "text": "Checklist\n\n Install recent R release\nCurrent version 4.2.1\n Install RStudio\nI am on version 2022.07.1+554 \n Install packages\ninstall.packages(c(\"gtsummary\", \"tidyverse\"))\n Ensure you can knit Rmarkdown files"
   },
   {
     "objectID": "slides/index.html#gtsummary-overview",
