@@ -1,0 +1,21 @@
+## {gtsummary} overview
+
+::: columns
+::: {.column width="50%"}
+-   Create [tabular summaries]{.emphasis} with sensible defaults but highly customizable
+-   Types of summaries:
+    -   "Table 1"-types
+    -   Cross-tabulation
+    -   Regression models
+    -   Survival data
+    -   Survey data
+    -   Custom tables
+:::
+
+::: {.column width="50%"}
+-   Report statistics from {gtsummary} tables [inline]{.emphasis} in R Markdown
+-   Stack and/or merge any table type
+-   Use [themes]{.emphasis} to standardize across tables
+-   Choose from different [print engines]{.emphasis}
+:::
+:::

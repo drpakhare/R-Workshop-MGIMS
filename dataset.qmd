@@ -1,0 +1,26 @@
+---
+title: "Dataset"
+editor: visual
+execute: 
+  echo: false
+  warning: false
+---
+
+## [Download](datasets/steps.xlsx)
+
+## Datasheet Description
+
+This datasheet is randomly sampled subset from the WHO-STEPS Survey conducted for NCD Risk Factor Surveillance.
+
+```{r}
+library(rio)
+library(here)
+library(tidyverse)
+df <- import(here("datasets", "steps.xlsx"))
+```
+
+Datasheet consist of observations of `r nrow(df)` participants and selected variables collected at each step.
+
+```{r}
+glimpse(df)
+```

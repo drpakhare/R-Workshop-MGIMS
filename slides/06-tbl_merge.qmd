@@ -1,0 +1,67 @@
+# tbl_merge()/tbl_stack()
+
+## tbl_merge() for side-by-side tables
+
+::: columns
+::: {.column width="50%"}
+A **univariable** table:
+
+```{r}
+tbl_uvreg <- 
+  df |> 
+  select(-District, -WSTEP3, - SBP, -DBP) |> 
+  tbl_uvregression(
+    method = glm,
+    y = Raised_BP,
+    method.args = 
+      list(family = binomial),
+    exponentiate = TRUE
+  )
+tbl_uvreg
+```
+:::
+
+::: {.column width="50%"}
+A **multivariable** table:
+
+```{r}
+tbl_mvreg <- 
+  glm(
+    Raised_BP ~ Age_Group + Smoking + BMI + LDL,
+    data = df,
+    family = binomial(link = "logit")
+  ) |> 
+  tbl_regression(
+    exponentiate = TRUE
+  ) |> 
+  add_global_p() 
+tbl_mvreg
+```
+:::
+:::
+
+## tbl_merge() for side-by-side tables
+
+```{r}
+tbl_merge(
+  list(tbl_uvreg, tbl_mvreg),
+  tab_spanner = c("**Univariable**", "**Multivariable**")
+)
+```
+
+## tbl_strata() for stratified tables
+
+```{r}
+df |>
+  mutate(Raised_BP = if_else(Raised_BP == 1, "Raised", "Normal")) |>
+  tbl_strata(
+    strata = District,
+    ~tbl_summary(.x, by = Raised_BP,
+                 percent = "row",
+                 missing = "no",
+                 include = c(Age_Group, Gender),
+                 digits = list(all_categorical() ~ 1),
+                 statistic = list(all_categorical() ~ "{p}")) |>
+      modify_header(all_stat_cols() ~ "**{level}**")
+  )
+```

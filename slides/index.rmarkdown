@@ -1,0 +1,939 @@
+---
+title: "Public Health Data Tabulation with {gtsummary}"
+author: "Abhijit P Pakhare"
+footer:  "[Public Health Data Tabulation with {gtsummary})"
+logo: "images/gtsummary-logo.png"
+editor: source
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    chalkboard: true
+    scrollable: true
+execute:
+  echo: true
+  output: asis
+  freeze: false
+---
+# Introduction
+
+```{r}
+#| echo: false
+#| cache: false
+library(gtsummary)
+library(tidyverse)
+library(countdown)
+
+knit_print.gtsummary <- function(x, ...) {
+  gtsummary::as_gt(x) |> gt::as_raw_html()
+}
+
+knit_print.gt_tbl <- function(x, ...) {
+  gt::as_raw_html(x)
+}
+
+registerS3method("knit_print", "gtsummary", knit_print.gtsummary)
+registerS3method("knit_print", "gt_tbl", knit_print.gt_tbl)
+
+# fill for font awesome icons
+fa_fill <- "#606060"
+```
+
+## Acknowledgements
+
+::: {.columns .v-center-container}
+::: {.column width="60%"}
+<img src="images/mgims.png" alt="drawing" width="70%"/>
+:::
+
+::: {.column width="40%"}
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/) (CC BY-SA4.0).
+:::
+:::
+
+# Creators of original presentation
+
+## Daniel D. Sjoberg
+
+::: {.columns .v-center-container}
+::: {.column width="60%"}
+`r fontawesome::fa("link", fill = fa_fill)` [danieldsjoberg.com](https://www.danieldsjoberg.com/)
+
+`r fontawesome::fa("twitter", fill = fa_fill)` [\@statistishdan](https://twitter.com/statistishdan)
+
+`r fontawesome::fa("linkedin", fill = fa_fill)` [linkedin.com/in/ddsjoberg](https://www.linkedin.com/in/ddsjoberg/)
+
+`r fontawesome::fa("github", fill = fa_fill)` [github.com/ddsjoberg](https://github.com/ddsjoberg/)
+:::
+
+::: {.column width="40%"}
+![](images/dan-fire-island-circle.png)
+:::
+:::
+
+## {.smaller}
+
+::: {.columns .v-center-container}
+::: {.column width="50%"}
+Shannon Pileggi
+
+![](images/shannon-pileggi-circle.png){width="70%"}
+
+`r fontawesome::fa("link", fill = fa_fill)` [pipinghotdata.com](https://www.pipinghotdata.com/)
+
+`r fontawesome::fa("twitter", fill = fa_fill)` [\@pipinghotdata](https://twitter.com/pipinghotdata)
+
+`r fontawesome::fa("linkedin", fill = fa_fill)` [linkedin.com/in/shannon-m-pileggi](https://www.linkedin.com/in/shannon-m-pileggi/)
+
+`r fontawesome::fa("github", fill = fa_fill)` [github.com/shannonpileggi](https://github.com/shannonpileggi/)
+:::
+
+::: {.column width="50%"}
+Karissa Whiting
+
+![](images/karissa-whiting-circle.png){width="70%"}
+
+`r fontawesome::fa("link", fill = fa_fill)` [karissawhiting.com](https://www.karissawhiting.com/)
+
+`r fontawesome::fa("twitter", fill = fa_fill)` [\@karissawhiting](https://twitter.com/karissawhiting)
+
+`r fontawesome::fa("linkedin", fill = fa_fill)` [linkedin.com/in/karissa-whiting-48877a52](https://www.linkedin.com/in/karissa-whiting-48877a52/)
+
+`r fontawesome::fa("github", fill = fa_fill)` [github.com/karissawhiting](https://github.com/karissawhiting/)
+:::
+:::
+
+## Checklist
+
+<br>
+
+`r fontawesome::fa("check", fill = fa_fill)` Install recent R release
+
+    Current version `r stringr::word(R.version.string, 3, 3)`
+
+`r fontawesome::fa("check", fill = fa_fill)` Install RStudio
+
+    I am on version 2022.07.1+554 
+
+`r fontawesome::fa("check", fill = fa_fill)` Install packages
+
+``` r
+install.packages(c("gtsummary", "tidyverse"))
+```
+
+`r fontawesome::fa("check", fill = fa_fill)` Ensure you can knit Rmarkdown files
+
+## {gtsummary} overview
+
+::: columns
+::: {.column width="50%"}
+-   Create [tabular summaries]{.emphasis} with sensible defaults but highly customizable
+-   Types of summaries:
+    -   "Table 1"-types
+    -   Cross-tabulation
+    -   Regression models
+    -   Survival data
+    -   Survey data
+    -   Custom tables
+:::
+
+::: {.column width="50%"}
+-   Report statistics from {gtsummary} tables [inline]{.emphasis} in R Markdown
+-   Stack and/or merge any table type
+-   Use [themes]{.emphasis} to standardize across tables
+-   Choose from different [print engines]{.emphasis}
+:::
+:::
+
+## Example Dataset
+
+::: {.columns .v-center-container}
+::: {.column width="40%"}
+-   The "steps.xlsx" data set is available for downloading under Dataset Tab
+
+-   This is a randomly sampled subset of WHO STEPS Survey conducted for NCD risk factor surveillance
+
+-   It consists of selected variables from all three steps of the survey.
+:::
+
+::: {.column width="60%"}
+```{r}
+#| label: 'describe-STEPS'
+#| message: false
+library(gtsummary)
+library(tidyverse)
+library(rio)
+library(here)
+df <- import(here("datasets", "steps.xlsx"))
+head(df) |> gt::gt()
+```
+:::
+:::
+
+## Example Dataset
+
+::: {.columns .v-center-container}
+::: {.column width="60%"}
+This presentation will use a variables from the dataset to demonstrate different tables.
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| label: 'describe-data'
+tibble(
+  Variable = names(df)
+) |> 
+  gt::gt()
+```
+:::
+:::
+
+```{r}
+#| label: 'create-small-trial'
+sm_trial <-
+  trial |> 
+  select(trt, age, grade, response)
+```
+
+# tbl_summary()
+
+## Basic tbl_summary()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: 'simple-summary'
+df |> 
+  tbl_summary()
+```
+:::
+
+::: {.column width="50%"}
+-   Four types of summaries: `continuous`, `continuous2`, `categorical`, and `dichotomous`
+
+-   Statistics are `median (IQR)` for continuous, `n (%)` for categorical/dichotomous
+
+-   Variables coded `0/1`, `TRUE/FALSE`, `Yes/No` treated as dichotomous
+
+-   Lists `NA` values under "Unknown"
+
+-   Label attributes are printed automatically
+:::
+:::
+
+## Customize tbl_summary() output {auto-animate="true"}
+
+```{r}
+#| output-location: "column"
+#| label: 'customize-summary1'
+tbl_summary(
+  df,
+  by = Raised_BP,
+  include = c(Gender, Age_Group, BMI)
+)
+```
+
+::: small
+::: columns
+::: {.column width="50%"}
+-   `by`: specify a column variable for cross-tabulation
+:::
+
+::: {.column width="50%"}
+:::
+:::
+:::
+
+## Customize tbl_summary() output {auto-animate="true"}
+
+```{r}
+#| output-location: "column"
+#| label: 'customize-summary2'
+tbl_summary(
+  df,
+  by = Raised_BP,
+  include = c(Gender, Age_Group, BMI),
+  type = BMI ~ "continuous2",
+)
+```
+
+::: small
+::: columns
+::: {.column width="50%"}
+-   `by`: specify a column variable for cross-tabulation
+
+-   `type`: specify the summary type
+:::
+
+::: {.column width="50%"}
+:::
+:::
+:::
+
+## Customize tbl_summary() output {auto-animate="true"}
+
+```{r}
+#| output-location: "column"
+#| label: 'customize-summary3'
+tbl_summary(
+  df,
+  by = Raised_BP,
+  include = c(Gender, Age_Group, BMI),
+  type = BMI ~ "continuous2",
+  statistic = 
+    list(
+      BMI ~ c("{mean} ({sd})", 
+              "{min}, {max}"), 
+      Gender ~ "{n} / {N} ({p}%)"
+    ),
+)
+```
+
+::: small
+::: columns
+::: {.column width="50%"}
+-   `by`: specify a column variable for cross-tabulation
+
+-   `type`: specify the summary type
+
+-   `statistic`: customize the reported statistics
+:::
+
+::: {.column width="50%"}
+:::
+:::
+:::
+
+## Customize tbl_summary() output {auto-animate="true"}
+
+```{r}
+#| output-location: "column"
+#| label: 'customize-summary4'
+tbl_summary(
+  df,
+  by = Raised_BP,
+  type = BMI ~ "continuous2",
+  include = c(Gender, Age_Group, BMI),
+  statistic = 
+    list(
+      BMI ~ c("{mean} ({sd})", 
+              "{min}, {max}"), 
+      Gender ~ "{n} / {N} ({p}%)"
+    ),
+  label = 
+    Age_Group ~ "Age Group",
+)
+```
+
+::: small
+::: columns
+::: {.column width="50%"}
+-   `by`: specify a column variable for cross-tabulation
+
+-   `type`: specify the summary type
+
+-   `statistic`: customize the reported statistics
+:::
+
+::: {.column width="50%"}
+-   `label`: change or customize variable labels
+:::
+:::
+:::
+
+## Customize tbl_summary() output {auto-animate="true"}
+
+```{r}
+#| output-location: "column"
+#| label: 'customize-summary5'
+tbl_summary(
+  df,
+  by = Raised_BP,
+  type = BMI ~ "continuous2",
+  include = c(Gender, Age_Group, BMI),
+  statistic = 
+    list(
+      BMI ~ c("{mean} ({sd})", 
+              "{min}, {max}"), 
+      Gender ~ "{n} / {N} ({p}%)"
+    ),
+  label = 
+    Age_Group ~ "Age Group",
+  digits = list(all_continuous()~1,
+                all_categorical()~ c(0,1))
+)
+```
+
+::: small
+::: columns
+::: {.column width="50%"}
+-   `by`: specify a column variable for cross-tabulation
+
+-   `type`: specify the summary type
+
+-   `statistic`: customize the reported statistics
+:::
+
+::: {.column width="50%"}
+-   `label`: change or customize variable labels
+
+-   `digits`: specify the number of decimal places for rounding
+:::
+:::
+:::
+
+## {gtsummary} + formulas
+
+<p align="center">
+
+<img src="https://raw.githubusercontent.com/ddsjoberg/gtsummary-weill-cornell-presentation/5887c81b58f4ed0c76f6ae458243e9c2a2fbbcd2/Images/Dan-SummaryTables-5.png" width="95%"/>
+
+</p>
+
+**Named list are OK too!** `label = list(age = "Patient Age")`
+
+## Add-on functions in {gtsummary}
+
+`tbl_summary()` objects can also be updated using related functions.
+
+-   `add_*()` add [additional column]{.emphasis} of statistics or information, e.g. p-values, q-values, overall statistics, treatment differences, N obs., and more
+
+-   `modify_*()` [modify]{.emphasis} table headers, spanning headers, footnotes, and more
+
+-   `bold_*()/italicize_*()` [style]{.emphasis} labels, variable levels, significant p-values
+
+## Update tbl_summary() with add\_\*()
+
+```{r}
+#| output-location: "column"
+#| code-line-numbers: "5"
+#| label: 'summary-with-p'
+df |>
+  tbl_summary(
+    by = Raised_BP
+  ) |> 
+  add_p() 
+```
+
+-   `add_p()`: adds a column of p-values
+
+## Update tbl_summary() with add\_\*() {auto-animate="true"}
+
+```{r}
+#| label: 'summary-with-overall1'
+#| output-location: "column"
+#| code-line-numbers: "6"
+df |>
+  tbl_summary(
+    by = Raised_BP,
+    missing = "no"
+  ) |> 
+  add_overall()
+```
+
+-   `add_overall()`: adds a column of overall statistics
+
+## Update tbl_summary() with add\_\*() {auto-animate="true"}
+
+```{r}
+#| label: 'summary-with-overall2'
+#| output-location: "column"
+#| code-line-numbers: "7"
+df |>
+  tbl_summary(
+    by = Raised_BP,
+    missing = "no"
+  ) |> 
+  add_overall() |> 
+  add_n()
+```
+
+-   `add_overall()`: adds a column of overall statistics
+-   `add_n()`: adds a column with the sample size
+
+## Update tbl_summary() with add\_\*() {auto-animate="true"}
+
+```{r}
+#| label: 'summary-with-overall3'
+#| output-location: "column"
+#| code-line-numbers: "8,9,10"
+df |>
+  tbl_summary(
+    by = Raised_BP,
+    missing = "no"
+  ) |> 
+  add_overall() |> 
+  add_n() |> 
+  add_stat_label(
+    label = all_categorical() ~ "No. (%)"
+  ) 
+```
+
+-   `add_overall()`: adds a column of overall statistics
+-   `add_n()`: adds a column with the sample size
+-   `add_stat_label()`: adds a description of the reported statistic
+
+## Update with bold\_\*()/italicize\_\*()
+
+```{r}
+#| label: 'summary-bold'
+#| output-location: "column"
+#| code-line-numbers: "6,7,8"
+df |>
+  tbl_summary(
+    by = Raised_BP
+  ) |>
+  add_p() |> 
+  bold_labels() |> 
+  italicize_levels() |> 
+  bold_p(t = 0.8)
+```
+
+-   `bold_labels()`: bold the variable labels
+-   `italicize_levels()`: italicize the variable levels
+-   `bold_p()`: bold p-values according a specified threshold
+
+## Update tbl_summary() with modify\_\*()
+
+```{r}
+#| label: 'summary-modified'
+#| output-location: "column"
+#| code-line-numbers: "4,5,6,7,8,9,10,11,12,13"
+tbl <-
+  df |> 
+  tbl_summary(by = Raised_BP, 
+              missing = "no") |>
+  modify_header(
+      stat_1 ~ "**No raised BP**",
+      stat_2 ~ "**Raised BP**"
+  ) |> 
+  modify_spanning_header(
+    all_stat_cols() ~ "**BP Status**") |> 
+  modify_footnote(
+    all_stat_cols() ~ 
+      paste("median (IQR) for continuous;",
+            "n (%) for categorical")
+  )
+tbl
+```
+
+-   Use `show_header_names()` to see the internal header names available for use in `modify_header()`
+
+## Column names
+
+```{r}
+#| label: 'column-names'
+#| output-location: "column"
+show_header_names(tbl)
+```
+
+<br><br>
+
+::: larger
+`all_stat_cols()` selects columns `"stat_1"` and `"stat_2"`
+:::
+
+## Update tbl_summary() with add\_\*()
+
+```{r}
+#| label: 'summary-with-difference'
+#| code-line-numbers: "12"
+df |>
+  select(Raised_BP, SBP, BMI, LDL, Smoking) |>
+  tbl_summary(
+    by = Raised_BP,
+    statistic = list(c(SBP, BMI, LDL) ~ "{mean} ({sd})",
+                     Smoking ~ "{p}%"),
+    missing = "no"
+  ) |> 
+  add_difference()
+```
+
+-   `add_difference()`: mean and rate differences between two groups. Can also be adjusted differences
+
+## Update tbl_summary() with add\_\*()
+
+::: {.columns .v-center-container}
+::: {.column width="50%"}
+```{r}
+#| label: 'summary-with-custom-stat'
+#| eval: false
+#| code-line-numbers: "6"
+df |>
+  tbl_summary(
+    by = Raised_BP,
+    missing = "no"
+  ) |> 
+  add_stat(...)
+```
+:::
+
+::: {.column width="50%"}
+-   Customize statistics presented with `add_stat()`
+
+-   Added statistics can be placed on the label or the level rows
+
+-   Added statistics may be a single column or multiple
+:::
+:::
+
+## Add-on functions in {gtsummary}
+
+And many more!
+
+See the documentation at <http://www.danieldsjoberg.com/gtsummary/reference/index.html>
+
+And a detailed `tbl_summary()` vignette at <http://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html>
+
+## Cross-tabulation with tbl_cross()
+
+`tbl_cross()` is a wrapper for `tbl_summary()` for **n x m** tables
+
+```{r}
+#| label: 'tbl_cross'
+#| output-location: "column"
+df |>
+  tbl_cross(
+    row = District, 
+    col = Raised_BP,
+    percent = "row",
+    margin = "row"
+  ) |>
+  add_p(source_note = TRUE) |>
+  bold_labels()
+```
+
+## Continuous Summaries with tbl_continuous()
+
+`tbl_continuous()` summarizes a continuous variable by 1, 2, or more categorical variables
+
+```{r}
+#| label: 'tbl_continuous'
+#| output-location: "column"
+df |>
+  tbl_continuous(
+    variable = SBP,
+    by = Raised_BP,
+    include = c(Age_Group, Gender)
+  ) 
+```
+
+## Survey data with tbl_svysummary()
+
+```{r}
+#| label: 'tbl_svysummary'
+#| output-location: "column"
+survey::svydesign(
+  ids = ~1, 
+  data = df, 
+  weights = ~WSTEP3
+) |>
+  tbl_svysummary(
+    by = Raised_BP,
+    include = c(Age_Group, Gender, District),
+    percent = "row"
+  ) |>
+  add_p() |>
+  modify_spanning_header(
+    all_stat_cols() ~ "**Raised BP**")
+```
+
+## Survey data with tbl_svysummary()
+
+```{r}
+#| label: 'tbl_svysummary_1'
+#| output-location: "column"
+survey::svydesign(
+  ids = ~1, 
+  data = df, 
+  weights = ~WSTEP3
+) |>
+  tbl_svysummary(
+    by = Raised_BP,
+    include = c(Age_Group, Gender, District),
+    percent = "row",
+    digits = list(all_categorical() ~ 1),
+    statistic = list(all_categorical() ~ "{p}")
+  ) |>
+  add_p() |>
+  modify_spanning_header(
+    all_stat_cols() ~ "**Raised BP**")
+```
+
+# tbl_regression()
+
+## Traditional model summary()
+
+::: columns
+::: {.column width="50%" style="font-size:0.75em;font-family:monospace"}
+```{r}
+#| output: true
+#| label: raw-model-summary
+df <- df %>% 
+  mutate(Raised_BP = if_else(Raised_BP=="Yes", 1,0))
+m1 <- 
+  glm(
+    Raised_BP ~ Age + Smoking + BMI,
+    data = df,
+    family = binomial(link = "logit")
+  )
+```
+:::
+
+::: {.column width="50%" style="font-size:0.5em;"}
+```{r}
+#| output: true
+summary(m1)
+```
+:::
+:::
+
+Looks [messy]{.emphasis} and it's not easy to digest
+
+## Basic tbl_regression()
+
+```{r}
+#| output-location: 'column'
+#| echo: true
+tbl_regression(m1)
+```
+
+-   Displays [p-values]{.emphasis} for covariates
+
+-   Shows [reference levels]{.emphasis} for categorical variables
+
+-   [Model type recognized]{.emphasis} as logistic regression with odds ratio appearing in header
+
+## Customize tbl_regression() output
+
+```{r}
+#| output-location: 'column'
+#| echo: true
+tbl_regression(
+  m1,
+  exponentiate = TRUE
+) |> 
+  add_global_p() |>
+  add_glance_table(
+    include = c(nobs,
+                logLik,
+                AIC,
+                BIC)
+  )
+```
+
+-   Display [odds ratio]{.emphasis} estimates and [confidence intervals]{.emphasis}
+
+-   Add [global p-values]{.emphasis}
+
+-   Add various model statistics
+
+## Supported models in tbl_regression()
+
+```{r}
+#| echo: false
+
+list_mods <- broom.helpers::supported_models$model
+list_length <- length(list_mods)
+cut_length <- floor(list_length/3)
+
+```
+
+::: {.columns style="font-size:0.65em"}
+::: {.column width="30%"}
+```{r}
+#| echo: false
+glue::glue("* {broom.helpers::supported_models$model[1:cut_length]} <br>") 
+```
+:::
+
+::: {.column width="30%"}
+```{r}
+#| echo: false
+glue::glue("* {broom.helpers::supported_models$model[(cut_length + 1): (2*cut_length)]} <br>") 
+```
+:::
+
+::: {.column width="30%"}
+```{r}
+#| echo: false
+glue::glue("* {broom.helpers::supported_models$model[(2*cut_length + 1):list_length]} <br>")
+```
+:::
+:::
+
+**Custom tidiers** can be written and passed to `tbl_regression()` using the `tidy_fun=` argument.
+
+## Univariate models with tbl_uvregression()
+
+```{r}
+#| output-location: "column"
+tbl_uvreg <- 
+  df |> 
+  select(-District, -WSTEP3, - SBP, -DBP) |> 
+  tbl_uvregression(
+    method = glm,
+    y = Raised_BP,
+    method.args = 
+      list(family = binomial),
+    exponentiate = TRUE
+  )
+tbl_uvreg
+```
+
+-   Specify model `method`, `method.args`, and the `response` variable
+
+-   Arguments and helper functions like `exponentiate`, `bold_*()`, `add_global_p()` can also be used with `tbl_uvregression()`
+
+# tbl_merge()/tbl_stack()
+
+## tbl_merge() for side-by-side tables
+
+::: columns
+::: {.column width="50%"}
+A **univariable** table:
+
+```{r}
+tbl_uvreg <- 
+  df |> 
+  select(-District, -WSTEP3, - SBP, -DBP) |> 
+  tbl_uvregression(
+    method = glm,
+    y = Raised_BP,
+    method.args = 
+      list(family = binomial),
+    exponentiate = TRUE
+  )
+tbl_uvreg
+```
+:::
+
+::: {.column width="50%"}
+A **multivariable** table:
+
+```{r}
+tbl_mvreg <- 
+  glm(
+    Raised_BP ~ Age_Group + Smoking + BMI + LDL,
+    data = df,
+    family = binomial(link = "logit")
+  ) |> 
+  tbl_regression(
+    exponentiate = TRUE
+  ) |> 
+  add_global_p() 
+tbl_mvreg
+```
+:::
+:::
+
+## tbl_merge() for side-by-side tables
+
+```{r}
+tbl_merge(
+  list(tbl_uvreg, tbl_mvreg),
+  tab_spanner = c("**Univariable**", "**Multivariable**")
+)
+```
+
+## tbl_strata() for stratified tables
+
+```{r}
+df |>
+  mutate(Raised_BP = if_else(Raised_BP == 1, "Raised", "Normal")) |>
+  tbl_strata(
+    strata = District,
+    ~tbl_summary(.x, by = Raised_BP,
+                 percent = "row",
+                 missing = "no",
+                 include = c(Age_Group, Gender),
+                 digits = list(all_categorical() ~ 1),
+                 statistic = list(all_categorical() ~ "{p}")) |>
+      modify_header(all_stat_cols() ~ "**{level}**")
+  )
+```
+
+# In Closing
+
+## {gtsummary} website
+
+<http://www.danieldsjoberg.com/gtsummary/>
+
+```{=html}
+<iframe width="780" height="500" src="http://www.danieldsjoberg.com/gtsummary/" title="gtsummary Documentation"></iframe>
+```
+
+
+## 
+
+::: columns
+::: {.column width="60%"}
+### Package Authors/Contributors
+
+::: small
+Daniel D. Sjoberg
+
+Michael Curry
+
+Joseph Larmarange
+
+Jessica Lavery
+
+Karissa Whiting
+
+Emily C. Zabor
+
+Xing Bai
+
+Esther Drill
+
+Jessica Flynn
+
+Margie Hannum
+
+Stephanie Lobaugh
+
+Shannon Pileggi
+
+Amy Tin
+
+Gustavo Zapata Wainberg
+:::
+:::
+
+::: {.column width="40%"}
+### Other Contributors
+
+::: smallish
+[\@ablack3](https://github.com/ablack3), [\@ABorakati](https://github.com/ABorakati), [\@aghaynes](https://github.com/aghaynes), [\@ahinton-mmc](https://github.com/ahinton-mmc), [\@aito123](https://github.com/aito123), [\@akarsteve](https://github.com/akarsteve), [\@akefley](https://github.com/akefley), [\@albertostefanelli](https://github.com/albertostefanelli), [\@alexis-catherine](https://github.com/alexis-catherine), [\@amygimma](https://github.com/amygimma), [\@anaavu](https://github.com/anaavu), [\@andrader](https://github.com/andrader), [\@angelgar](https://github.com/angelgar), [\@arbet003](https://github.com/arbet003), [\@arnmayer](https://github.com/arnmayer), [\@aspina7](https://github.com/aspina7), [\@asshah4](https://github.com/asshah4), [\@awcm0n](https://github.com/awcm0n), [\@barthelmes](https://github.com/barthelmes), [\@bcjaeger](https://github.com/bcjaeger), [\@BeauMeche](https://github.com/BeauMeche), [\@benediktclaus](https://github.com/benediktclaus), [\@berg-michael](https://github.com/berg-michael), [\@bhattmaulik](https://github.com/bhattmaulik), [\@BioYork](https://github.com/BioYork), [\@brachem-christian](https://github.com/brachem-christian), [\@bwiernik](https://github.com/bwiernik), [\@bx259](https://github.com/bx259), [\@calebasaraba](https://github.com/calebasaraba), [\@CarolineXGao](https://github.com/CarolineXGao), [\@ChongTienGoh](https://github.com/ChongTienGoh), [\@Chris-M-P](https://github.com/Chris-M-P), [\@chrisleitzinger](https://github.com/chrisleitzinger), [\@cjprobst](https://github.com/cjprobst), [\@clmawhorter](https://github.com/clmawhorter), [\@CodieMonster](https://github.com/CodieMonster), [\@coeus-analytics](https://github.com/coeus-analytics), [\@coreysparks](https://github.com/coreysparks), [\@ctlamb](https://github.com/ctlamb), [\@davidgohel](https://github.com/davidgohel), [\@davidkane9](https://github.com/davidkane9), [\@dax44](https://github.com/dax44), [\@dchiu911](https://github.com/dchiu911), [\@ddsjoberg](https://github.com/ddsjoberg), [\@DeFilippis](https://github.com/DeFilippis), [\@denis-or](https://github.com/denis-or), [\@dereksonderegger](https://github.com/dereksonderegger), [\@dieuv0](https://github.com/dieuv0), [\@discoleo](https://github.com/discoleo), [\@djbirke](https://github.com/djbirke), [\@dmenne](https://github.com/dmenne), [\@ElfatihHasabo](https://github.com/ElfatihHasabo), [\@emilyvertosick](https://github.com/emilyvertosick), [\@ercbk](https://github.com/ercbk), [\@erikvona](https://github.com/erikvona), [\@eweisbrod](https://github.com/eweisbrod), [\@feizhadj](https://github.com/feizhadj), [\@fh-jsnider](https://github.com/fh-jsnider), [\@ge-generation](https://github.com/ge-generation), [\@ghost](https://github.com/ghost), [\@gjones1219](https://github.com/gjones1219), [\@gorkang](https://github.com/gorkang), [\@GuiMarthe](https://github.com/GuiMarthe), [\@hass91](https://github.com/hass91), [\@HichemLa](https://github.com/HichemLa), [\@hughjonesd](https://github.com/hughjonesd), [\@iaingallagher](https://github.com/iaingallagher), [\@ilyamusabirov](https://github.com/ilyamusabirov), [\@IndrajeetPatil](https://github.com/IndrajeetPatil), [\@IsadoraBM](https://github.com/IsadoraBM), [\@j-tamad](https://github.com/j-tamad), [\@jalavery](https://github.com/jalavery), [\@jeanmanguy](https://github.com/jeanmanguy), [\@jemus42](https://github.com/jemus42), [\@jenifav](https://github.com/jenifav), [\@jennybc](https://github.com/jennybc), [\@JeremyPasco](https://github.com/JeremyPasco), [\@JesseRop](https://github.com/JesseRop), [\@jflynn264](https://github.com/jflynn264), [\@jjallaire](https://github.com/jjallaire), [\@jmbarajas](https://github.com/jmbarajas), [\@jmbarbone](https://github.com/jmbarbone), [\@JoanneF1229](https://github.com/JoanneF1229), [\@joelgautschi](https://github.com/joelgautschi), [\@jojosgithub](https://github.com/jojosgithub), [\@JonGretar](https://github.com/JonGretar), [\@jordan49er](https://github.com/jordan49er), [\@jthomasmock](https://github.com/jthomasmock), [\@juseer](https://github.com/juseer), [\@jwilliman](https://github.com/jwilliman), [\@karissawhiting](https://github.com/karissawhiting), [\@kendonB](https://github.com/kendonB), [\@kmdono02](https://github.com/kmdono02), [\@kwakuduahc1](https://github.com/kwakuduahc1), [\@lamhine](https://github.com/lamhine), [\@larmarange](https://github.com/larmarange), [\@leejasme](https://github.com/leejasme), [\@loukesio](https://github.com/loukesio), [\@lspeetluk](https://github.com/lspeetluk), [\@ltin1214](https://github.com/ltin1214), [\@lucavd](https://github.com/lucavd), [\@LuiNov](https://github.com/LuiNov), [\@maia-sh](https://github.com/maia-sh), [\@Marsus1972](https://github.com/Marsus1972), [\@matthieu-faron](https://github.com/matthieu-faron), [\@mbac](https://github.com/mbac), [\@mdidish](https://github.com/mdidish), [\@MelissaAssel](https://github.com/MelissaAssel), [\@michaelcurry1123](https://github.com/michaelcurry1123), [\@mljaniczek](https://github.com/mljaniczek), [\@moleps](https://github.com/moleps), [\@motocci](https://github.com/motocci), [\@msberends](https://github.com/msberends), [\@mvuorre](https://github.com/mvuorre), [\@myensr](https://github.com/myensr), [\@MyKo101](https://github.com/MyKo101), [\@oranwutang](https://github.com/oranwutang), [\@palantre](https://github.com/palantre), [\@Pascal-Schmidt](https://github.com/Pascal-Schmidt), [\@pedersebastian](https://github.com/pedersebastian), [\@perlatex](https://github.com/perlatex), [\@philsf](https://github.com/philsf), [\@polc1410](https://github.com/polc1410), [\@postgres-newbie](https://github.com/postgres-newbie), [\@proshano](https://github.com/proshano), [\@raphidoc](https://github.com/raphidoc), [\@RaviBot](https://github.com/RaviBot), [\@rich-iannone](https://github.com/rich-iannone), [\@RiversPharmD](https://github.com/RiversPharmD), [\@rmgpanw](https://github.com/rmgpanw), [\@roman2023](https://github.com/roman2023), [\@ryzhu75](https://github.com/ryzhu75), [\@sachijay](https://github.com/sachijay), [\@saifelayan](https://github.com/saifelayan), [\@sammo3182](https://github.com/sammo3182), [\@sandhyapc](https://github.com/sandhyapc), [\@sbalci](https://github.com/sbalci), [\@sda030](https://github.com/sda030), [\@shannonpileggi](https://github.com/shannonpileggi), [\@shengchaohou](https://github.com/shengchaohou), [\@ShixiangWang](https://github.com/ShixiangWang), [\@simonpcouch](https://github.com/simonpcouch), [\@slb2240](https://github.com/slb2240), [\@slobaugh](https://github.com/slobaugh), [\@spiralparagon](https://github.com/spiralparagon), [\@StaffanBetner](https://github.com/StaffanBetner), [\@Stephonomon](https://github.com/Stephonomon), [\@storopoli](https://github.com/storopoli), [\@szimmer](https://github.com/szimmer), [\@tamytsujimoto](https://github.com/tamytsujimoto), [\@TarJae](https://github.com/TarJae), [\@themichjam](https://github.com/themichjam), [\@THIB20](https://github.com/THIB20), [\@tibirkrajc](https://github.com/tibirkrajc), [\@tjmeyers](https://github.com/tjmeyers), [\@tldrcharlene](https://github.com/tldrcharlene), [\@tormodb](https://github.com/tormodb), [\@toshifumikuroda](https://github.com/toshifumikuroda), [\@UAB-BST-680](https://github.com/UAB-BST-680), [\@uakimix](https://github.com/uakimix), [\@uriahf](https://github.com/uriahf), [\@Valja64](https://github.com/Valja64), [\@vvm02](https://github.com/vvm02), [\@xkcococo](https://github.com/xkcococo), [\@yonicd](https://github.com/yonicd), [\@yoursdearboy](https://github.com/yoursdearboy), [\@zabore](https://github.com/zabore), [\@zachariae](https://github.com/zachariae), [\@zaddyzad](https://github.com/zaddyzad), [\@zeyunlu](https://github.com/zeyunlu), [\@zhengnow](https://github.com/zhengnow), [\@zlkrvsm](https://github.com/zlkrvsm), [\@zongell-star](https://github.com/zongell-star), and [\@Zoulf001](https://github.com/Zoulf001).
+:::
+:::
+:::
+
+## Thank you
+
+![](https://raw.githubusercontent.com/ddsjoberg/gtsummary/main/data-raw/misc_files/tbl_summary_demo_fast.gif)
+
+::: columns
+::: {.column width="50%"}
+`r fontawesome::fa("stack-overflow", fill = fa_fill)` Ask on [stackoverflow.com](stackoverflow.com)
+
+`r fontawesome::fa("align-justify", fill = fa_fill)` *Use the gtsummary tag*
+
+`r fontawesome::fa("fire", fill = fa_fill)` Hundreds of Qs already answered!
+:::
+
+::: {.column width="50%"}
+`r fontawesome::fa("link", fill = fa_fill)` [danieldsjoberg.com](https://www.danieldsjoberg.com/)
+
+`r fontawesome::fa("twitter", fill = fa_fill)` [\@statistishdan](https://twitter.com/statistishdan)
+
+`r fontawesome::fa("linkedin", fill = fa_fill)` [linkedin.com/in/ddsjoberg/](https://www.linkedin.com/in/ddsjoberg/)
+
+`r fontawesome::fa("github", fill = fa_fill)` [github.com/ddsjoberg](https://github.com/ddsjoberg/)
+:::
+:::
+
+

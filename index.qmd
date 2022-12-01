@@ -1,0 +1,39 @@
+---
+title: "Public Health Data Tabulation with {gtsummary}"
+subtitle: "R for Public Health Workshop (MGIMS Sevagram)"
+editor: source
+---
+
+<!-- https://github.com/rstudio-conf-2022/teach-ds -->
+
+------------------------------------------------------------------------
+
+🗓 December 2, 2022 \| 10:00am - 2:00pm IST
+
+# Overview
+
+The [**gtsummary**](https://www.danieldsjoberg.com/gtsummary/) package provides an elegant and flexible way to create publication-ready summary tables in **R**. A critical part of the work of statisticians, data scientists, and analysts is summarizing data sets and regression models in R and publishing or sharing polished summary tables. The [**gtsummary**](https://www.danieldsjoberg.com/gtsummary/) package was created to streamline these everyday analysis tasks by allowing users to easily create reproducible summaries of data sets, regression models, survey data, and survival data with a simple interface and very little code. The package follows a tidy framework, making it easy to integrate with standard data workflows, and offers many table customization features through function arguments, helper functions, and custom themes.
+
+## Learning objectives
+
+Build, customize, and report tables often found in public health journals and other public health related documents such as working papers and technical reports.
+
+## Speaker
+
+**Dr Abhijit P Pakhare,**
+
+Associate Professor,
+
+Community and Family Medicine,
+
+All India Institute of Medical Sciences, Bhopal,
+
+Madhya Pradesh, India
+
+Email- abhijit.cfm\@aiimsbhopal.edu.in
+
+## Package Creator (Slides from his original presentation are modified for this workshop)
+
+![](images/dan-circle.png){style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of Daniel D. Sjoberg" width="200"}
+
+[**Daniel D. Sjoberg**](https://www.danieldsjoberg.com/) (he/him) is a Senior Biostatistician at Memorial Sloan Kettering Cancer Center in New York City and a DrPH candidate in Biostatistics at Columbia University. His research interests include adaptive methods in clinical trials, precision medicine, and predictive modeling. He also enjoys R package development, creating many packages available on [CRAN](https://cran.r-project.org/web/packages/), [R-Universe](https://ddsjoberg.r-universe.dev/ui#packages), [GitHub](https://github.com/ddsjoberg), and internally at MSKCC. Daniel is the winner of the 2021 American Statistical Association (ASA) Innovation in Statistical Programming and Analytics award.

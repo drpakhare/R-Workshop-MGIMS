@@ -1,0 +1,50 @@
+## Example Dataset
+
+::: {.columns .v-center-container}
+::: {.column width="40%"}
+-   The "steps.xlsx" data set is available for downloading under Dataset Tab
+
+-   This is a randomly sampled subset of WHO STEPS Survey conducted for NCD risk factor surveillance
+
+-   It consists of selected variables from all three steps of the survey.
+:::
+
+::: {.column width="60%"}
+```{r}
+#| label: 'describe-STEPS'
+#| message: false
+library(gtsummary)
+library(tidyverse)
+library(rio)
+library(here)
+df <- import(here("datasets", "steps.xlsx"))
+head(df) |> gt::gt()
+```
+:::
+:::
+
+## Example Dataset
+
+::: {.columns .v-center-container}
+::: {.column width="60%"}
+This presentation will use a variables from the dataset to demonstrate different tables.
+:::
+
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| label: 'describe-data'
+tibble(
+  Variable = names(df)
+) |> 
+  gt::gt()
+```
+:::
+:::
+
+```{r}
+#| label: 'create-small-trial'
+sm_trial <-
+  trial |> 
+  select(trt, age, grade, response)
+```

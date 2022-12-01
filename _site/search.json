@@ -1,0 +1,324 @@
+[
+  {
+    "objectID": "dataset.html#datasheet-description",
+    "href": "dataset.html#datasheet-description",
+    "title": "Dataset",
+    "section": "Datasheet Description",
+    "text": "Datasheet Description\nThis datasheet is randomly sampled subset from the WHO-STEPS Survey conducted for NCD Risk Factor Surveillance.\n\n\n\nDatasheet consist of observations of 3000 participants and selected variables collected at each step.\n\n\nRows: 3,000\nColumns: 13\n$ Gender              <chr> \"Women\", \"Men\", \"Men\", \"Women\", \"Men\", \"Women\", \"M…\n$ Age                 <dbl> 60, 67, 18, 67, 38, 58, 60, 39, 19, 35, 45, 50, 53…\n$ Age_Group           <chr> \"59-69\", \"59-69\", \"18-30\", \"59-69\", \"30-44\", \"44-5…\n$ Education           <chr> \"Illiterate\", \"Higher Secondary +\", \"Higher Second…\n$ SBP                 <dbl> 116.66667, 166.66667, 127.66667, 106.33333, 114.00…\n$ DBP                 <dbl> 77.00000, 97.33333, 79.33333, 67.00000, 74.00000, …\n$ BMI                 <dbl> 16.10928, 25.29558, 22.17560, 17.28791, 18.14509, …\n$ LDL                 <dbl> 49.2, 74.6, 53.8, 42.0, 28.0, 95.6, 70.0, 58.0, 53…\n$ Smoking             <chr> \"No\", \"No\", \"No\", \"No\", \"Yes\", \"No\", \"Yes\", \"No\", …\n$ Physical_Inactivity <chr> \"No\", \"No\", \"No\", \"Yes\", \"No\", \"No\", \"Yes\", \"No\", …\n$ Raised_BP           <chr> \"No\", \"Yes\", \"No\", \"No\", \"No\", \"Yes\", \"Yes\", \"Yes\"…\n$ District            <chr> \"Balaghat\", \"Satna\", \"Ratlam\", \"Dindori\", \"Damoh\",…\n$ WSTEP3              <dbl> 8398.779, 6269.137, 30503.785, 8898.991, 16746.247…"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "",
+    "text": "🗓 December 2, 2022 | 10:00am - 2:00pm IST"
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBuild, customize, and report tables often found in public health journals and other public health related documents such as working papers and technical reports."
+  },
+  {
+    "objectID": "index.html#package-creator-slides-from-his-original-presentation-are-modified-for-this-workshop",
+    "href": "index.html#package-creator-slides-from-his-original-presentation-are-modified-for-this-workshop",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Package Creator (Slides from his original presentation are modified for this workshop)",
+    "text": "Package Creator (Slides from his original presentation are modified for this workshop)\n\nDaniel D. Sjoberg (he/him) is a Senior Biostatistician at Memorial Sloan Kettering Cancer Center in New York City and a DrPH candidate in Biostatistics at Columbia University. His research interests include adaptive methods in clinical trials, precision medicine, and predictive modeling. He also enjoys R package development, creating many packages available on CRAN, R-Universe, GitHub, and internally at MSKCC. Daniel is the winner of the 2021 American Statistical Association (ASA) Innovation in Statistical Programming and Analytics award."
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "License",
+    "section": "",
+    "text": "This work is licensed under a Creative Commons Attribution 4.0 International License."
+  },
+  {
+    "objectID": "material.html",
+    "href": "material.html",
+    "title": "Material",
+    "section": "",
+    "text": "View slides in full screen"
+  },
+  {
+    "objectID": "slides/index.html#acknowledgements",
+    "href": "slides/index.html#acknowledgements",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\n\n\n\n\nThis work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA4.0)."
+  },
+  {
+    "objectID": "slides/index.html#daniel-d.-sjoberg",
+    "href": "slides/index.html#daniel-d.-sjoberg",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Daniel D. Sjoberg",
+    "text": "Daniel D. Sjoberg\n\n\n danieldsjoberg.com\n @statistishdan\n linkedin.com/in/ddsjoberg\n github.com/ddsjoberg"
+  },
+  {
+    "objectID": "slides/index.html#section",
+    "href": "slides/index.html#section",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "",
+    "text": "Shannon Pileggi\n\n pipinghotdata.com\n @pipinghotdata\n linkedin.com/in/shannon-m-pileggi\n github.com/shannonpileggi\n\nKarissa Whiting\n\n karissawhiting.com\n @karissawhiting\n linkedin.com/in/karissa-whiting-48877a52\n github.com/karissawhiting"
+  },
+  {
+    "objectID": "slides/index.html#checklist",
+    "href": "slides/index.html#checklist",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Checklist",
+    "text": "Checklist\n\n Install recent R release\nCurrent version 4.2.1\n Install RStudio\nI am on version 2022.07.1+554 \n Install packages\ninstall.packages(c(\"gtsummary\", \"tidyverse\", \"labelled\", \"usethis\", \"causaldata\", \"fs\", \"skimr\", \"car\", \"emmeans\"))\n Ensure you can knit Rmarkdown files"
+  },
+  {
+    "objectID": "slides/index.html#gtsummary-overview",
+    "href": "slides/index.html#gtsummary-overview",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "{gtsummary} overview",
+    "text": "{gtsummary} overview\n\n\n\nCreate tabular summaries with sensible defaults but highly customizable\nTypes of summaries:\n\n“Table 1”-types\nCross-tabulation\nRegression models\nSurvival data\nSurvey data\nCustom tables\n\n\n\n\nReport statistics from {gtsummary} tables inline in R Markdown\nStack and/or merge any table type\nUse themes to standardize across tables\nChoose from different print engines"
+  },
+  {
+    "objectID": "slides/index.html#example-dataset",
+    "href": "slides/index.html#example-dataset",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Example Dataset",
+    "text": "Example Dataset\n\n\n\nThe “steps.xlsx” data set is available for downloading under Dataset Tab\nThis is a randomly sampled subset of WHO STEPS Survey conducted for NCD risk factor surveillance\nIt consists of selected variables from all three steps of the survey.\n\n\nlibrary(gtsummary)\nlibrary(tidyverse)\nlibrary(rio)\nlibrary(here)\ndf <- import(here(\"datasets\", \"steps.xlsx\"))\nhead(df) |> gt::gt()\n\n\n\n\n\nGender\n\n\nAge\n\n\nAge_Group\n\n\nEducation\n\n\nSBP\n\n\nDBP\n\n\nBMI\n\n\nLDL\n\n\nSmoking\n\n\nPhysical_Inactivity\n\n\nRaised_BP\n\n\nDistrict\n\n\nWSTEP3\n\n\n\n\n\n\nWomen\n\n\n60\n\n\n59-69\n\n\nIlliterate\n\n\n116.6667\n\n\n77.00000\n\n\n16.10928\n\n\n49.2\n\n\nNo\n\n\nNo\n\n\nNo\n\n\nBalaghat\n\n\n8398.779\n\n\n\n\nMen\n\n\n67\n\n\n59-69\n\n\nHigher Secondary +\n\n\n166.6667\n\n\n97.33333\n\n\n25.29558\n\n\n74.6\n\n\nNo\n\n\nNo\n\n\nYes\n\n\nSatna\n\n\n6269.137\n\n\n\n\nMen\n\n\n18\n\n\n18-30\n\n\nHigher Secondary +\n\n\n127.6667\n\n\n79.33333\n\n\n22.17560\n\n\n53.8\n\n\nNo\n\n\nNo\n\n\nNo\n\n\nRatlam\n\n\n30503.785\n\n\n\n\nWomen\n\n\n67\n\n\n59-69\n\n\nIlliterate\n\n\n106.3333\n\n\n67.00000\n\n\n17.28791\n\n\n42.0\n\n\nNo\n\n\nYes\n\n\nNo\n\n\nDindori\n\n\n8898.991\n\n\n\n\nMen\n\n\n38\n\n\n30-44\n\n\nSecondary\n\n\n114.0000\n\n\n74.00000\n\n\n18.14509\n\n\n28.0\n\n\nYes\n\n\nNo\n\n\nNo\n\n\nDamoh\n\n\n16746.247\n\n\n\n\nWomen\n\n\n58\n\n\n44-59\n\n\nIlliterate\n\n\n158.3333\n\n\n87.33333\n\n\n26.18594\n\n\n95.6\n\n\nNo\n\n\nNo\n\n\nYes\n\n\nRatlam\n\n\n15545.019"
+  },
+  {
+    "objectID": "slides/index.html#example-dataset-1",
+    "href": "slides/index.html#example-dataset-1",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Example Dataset",
+    "text": "Example Dataset\n\n\nThis presentation will use a variables from the dataset to demonstrate different tables.\n\n\n\n\n\n\nVariable\n\n\n\n\n\n\nGender\n\n\n\n\nAge\n\n\n\n\nAge_Group\n\n\n\n\nEducation\n\n\n\n\nSBP\n\n\n\n\nDBP\n\n\n\n\nBMI\n\n\n\n\nLDL\n\n\n\n\nSmoking\n\n\n\n\nPhysical_Inactivity\n\n\n\n\nRaised_BP\n\n\n\n\nDistrict\n\n\n\n\nWSTEP3\n\n\n\n\n\n\n\nsm_trial <-\n  trial |> \n  select(trt, age, grade, response)"
+  },
+  {
+    "objectID": "slides/index.html#basic-tbl_summary",
+    "href": "slides/index.html#basic-tbl_summary",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Basic tbl_summary()",
+    "text": "Basic tbl_summary()\n\n\ndf |> \n  tbl_summary()\n\n\n\n\n\nCharacteristic\n\n\nN = 3,0001\n\n\n\n\n\n\nGender\n\n\n\n\n\n\n    Men\n\n\n1,039 (35%)\n\n\n\n\n    Women\n\n\n1,961 (65%)\n\n\n\n\nAge\n\n\n40 (30, 51)\n\n\n\n\nAge_Group\n\n\n\n\n\n\n    18-30\n\n\n691 (23%)\n\n\n\n\n    30-44\n\n\n1,097 (37%)\n\n\n\n\n    44-59\n\n\n799 (27%)\n\n\n\n\n    59-69\n\n\n413 (14%)\n\n\n\n\nEducation\n\n\n\n\n\n\n    Higher Secondary +\n\n\n832 (28%)\n\n\n\n\n    Illiterate\n\n\n1,162 (39%)\n\n\n\n\n    Primary\n\n\n493 (16%)\n\n\n\n\n    Secondary\n\n\n513 (17%)\n\n\n\n\nSBP\n\n\n125 (114, 138)\n\n\n\n\n    Unknown\n\n\n26\n\n\n\n\nDBP\n\n\n78 (71, 85)\n\n\n\n\n    Unknown\n\n\n26\n\n\n\n\nBMI\n\n\n20.2 (18.0, 23.3)\n\n\n\n\n    Unknown\n\n\n78\n\n\n\n\nLDL\n\n\n57 (42, 75)\n\n\n\n\nSmoking\n\n\n275 (9.2%)\n\n\n\n\nPhysical_Inactivity\n\n\n594 (20%)\n\n\n\n\nRaised_BP\n\n\n825 (28%)\n\n\n\n\nDistrict\n\n\n\n\n\n\n    Balaghat\n\n\n357 (12%)\n\n\n\n\n    Bhopal\n\n\n438 (15%)\n\n\n\n\n    Damoh\n\n\n218 (7.3%)\n\n\n\n\n    Dhar\n\n\n429 (14%)\n\n\n\n\n    Dindori\n\n\n141 (4.7%)\n\n\n\n\n    Hoshangabad\n\n\n235 (7.8%)\n\n\n\n\n    Ratlam\n\n\n281 (9.4%)\n\n\n\n\n    Satna\n\n\n452 (15%)\n\n\n\n\n    Sheopur\n\n\n115 (3.8%)\n\n\n\n\n    Shivpuri\n\n\n334 (11%)\n\n\n\n\nWSTEP3\n\n\n16,031 (14,218, 17,604)\n\n\n\n\n\n\n1 n (%); Median (IQR)\n\n\n\n\n\n\n\nFour types of summaries: continuous, continuous2, categorical, and dichotomous\nStatistics are median (IQR) for continuous, n (%) for categorical/dichotomous\nVariables coded 0/1, TRUE/FALSE, Yes/No treated as dichotomous\nLists NA values under “Unknown”\nLabel attributes are printed automatically"
+  },
+  {
+    "objectID": "slides/index.html#customize-tbl_summary-output",
+    "href": "slides/index.html#customize-tbl_summary-output",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Customize tbl_summary() output",
+    "text": "Customize tbl_summary() output\n\n\ntbl_summary(\n  df,\n  by = Raised_BP,\n  include = c(Gender, Age_Group, BMI)\n)\n\n\n\n\n\n\nCharacteristic\n\n\nNo, N = 2,1751\n\n\nYes, N = 8251\n\n\n\n\n\n\nGender\n\n\n\n\n\n\n\n\n    Men\n\n\n744 (34%)\n\n\n295 (36%)\n\n\n\n\n    Women\n\n\n1,431 (66%)\n\n\n530 (64%)\n\n\n\n\nAge_Group\n\n\n\n\n\n\n\n\n    18-30\n\n\n636 (29%)\n\n\n55 (6.7%)\n\n\n\n\n    30-44\n\n\n868 (40%)\n\n\n229 (28%)\n\n\n\n\n    44-59\n\n\n495 (23%)\n\n\n304 (37%)\n\n\n\n\n    59-69\n\n\n176 (8.1%)\n\n\n237 (29%)\n\n\n\n\nBMI\n\n\n19.7 (17.7, 22.4)\n\n\n21.8 (18.9, 25.3)\n\n\n\n\n    Unknown\n\n\n70\n\n\n8\n\n\n\n\n\n\n1 n (%); Median (IQR)\n\n\n\n\n\n\n\n\n\n\n\nby: specify a column variable for cross-tabulation"
+  },
+  {
+    "objectID": "slides/index.html#customize-tbl_summary-output-1",
+    "href": "slides/index.html#customize-tbl_summary-output-1",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Customize tbl_summary() output",
+    "text": "Customize tbl_summary() output\n\n\ntbl_summary(\n  df,\n  by = Raised_BP,\n  include = c(Gender, Age_Group, BMI),\n  type = BMI ~ \"continuous2\",\n)\n\n\n\n\n\n\nCharacteristic\n\n\nNo, N = 2,1751\n\n\nYes, N = 8251\n\n\n\n\n\n\nGender\n\n\n\n\n\n\n\n\n    Men\n\n\n744 (34%)\n\n\n295 (36%)\n\n\n\n\n    Women\n\n\n1,431 (66%)\n\n\n530 (64%)\n\n\n\n\nAge_Group\n\n\n\n\n\n\n\n\n    18-30\n\n\n636 (29%)\n\n\n55 (6.7%)\n\n\n\n\n    30-44\n\n\n868 (40%)\n\n\n229 (28%)\n\n\n\n\n    44-59\n\n\n495 (23%)\n\n\n304 (37%)\n\n\n\n\n    59-69\n\n\n176 (8.1%)\n\n\n237 (29%)\n\n\n\n\nBMI\n\n\n\n\n\n\n\n\n    Median (IQR)\n\n\n19.7 (17.7, 22.4)\n\n\n21.8 (18.9, 25.3)\n\n\n\n\n    Unknown\n\n\n70\n\n\n8\n\n\n\n\n\n\n1 n (%)\n\n\n\n\n\n\n\n\n\n\n\nby: specify a column variable for cross-tabulation\ntype: specify the summary type"
+  },
+  {
+    "objectID": "slides/index.html#customize-tbl_summary-output-2",
+    "href": "slides/index.html#customize-tbl_summary-output-2",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Customize tbl_summary() output",
+    "text": "Customize tbl_summary() output\n\n\ntbl_summary(\n  df,\n  by = Raised_BP,\n  include = c(Gender, Age_Group, BMI),\n  type = BMI ~ \"continuous2\",\n  statistic = \n    list(\n      BMI ~ c(\"{mean} ({sd})\", \n              \"{min}, {max}\"), \n      Gender ~ \"{n} / {N} ({p}%)\"\n    ),\n)\n\n\n\n\n\n\nCharacteristic\n\n\nNo, N = 2,1751\n\n\nYes, N = 8251\n\n\n\n\n\n\nGender\n\n\n\n\n\n\n\n\n    Men\n\n\n744 / 2,175 (34%)\n\n\n295 / 825 (36%)\n\n\n\n\n    Women\n\n\n1,431 / 2,175 (66%)\n\n\n530 / 825 (64%)\n\n\n\n\nAge_Group\n\n\n\n\n\n\n\n\n    18-30\n\n\n636 (29%)\n\n\n55 (6.7%)\n\n\n\n\n    30-44\n\n\n868 (40%)\n\n\n229 (28%)\n\n\n\n\n    44-59\n\n\n495 (23%)\n\n\n304 (37%)\n\n\n\n\n    59-69\n\n\n176 (8.1%)\n\n\n237 (29%)\n\n\n\n\nBMI\n\n\n\n\n\n\n\n\n    Mean (SD)\n\n\n20.5 (3.9)\n\n\n22.5 (4.8)\n\n\n\n\n    Range\n\n\n11.9, 47.8\n\n\n13.5, 47.8\n\n\n\n\n    Unknown\n\n\n70\n\n\n8\n\n\n\n\n\n\n1 n / N (%); n (%)\n\n\n\n\n\n\n\n\n\n\n\nby: specify a column variable for cross-tabulation\ntype: specify the summary type\nstatistic: customize the reported statistics"
+  },
+  {
+    "objectID": "slides/index.html#customize-tbl_summary-output-3",
+    "href": "slides/index.html#customize-tbl_summary-output-3",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Customize tbl_summary() output",
+    "text": "Customize tbl_summary() output\n\n\ntbl_summary(\n  df,\n  by = Raised_BP,\n  type = BMI ~ \"continuous2\",\n  include = c(Gender, Age_Group, BMI),\n  statistic = \n    list(\n      BMI ~ c(\"{mean} ({sd})\", \n              \"{min}, {max}\"), \n      Gender ~ \"{n} / {N} ({p}%)\"\n    ),\n  label = \n    Age_Group ~ \"Age Group\",\n)\n\n\n\n\n\n\nCharacteristic\n\n\nNo, N = 2,1751\n\n\nYes, N = 8251\n\n\n\n\n\n\nGender\n\n\n\n\n\n\n\n\n    Men\n\n\n744 / 2,175 (34%)\n\n\n295 / 825 (36%)\n\n\n\n\n    Women\n\n\n1,431 / 2,175 (66%)\n\n\n530 / 825 (64%)\n\n\n\n\nAge Group\n\n\n\n\n\n\n\n\n    18-30\n\n\n636 (29%)\n\n\n55 (6.7%)\n\n\n\n\n    30-44\n\n\n868 (40%)\n\n\n229 (28%)\n\n\n\n\n    44-59\n\n\n495 (23%)\n\n\n304 (37%)\n\n\n\n\n    59-69\n\n\n176 (8.1%)\n\n\n237 (29%)\n\n\n\n\nBMI\n\n\n\n\n\n\n\n\n    Mean (SD)\n\n\n20.5 (3.9)\n\n\n22.5 (4.8)\n\n\n\n\n    Range\n\n\n11.9, 47.8\n\n\n13.5, 47.8\n\n\n\n\n    Unknown\n\n\n70\n\n\n8\n\n\n\n\n\n\n1 n / N (%); n (%)\n\n\n\n\n\n\n\n\n\n\n\nby: specify a column variable for cross-tabulation\ntype: specify the summary type\nstatistic: customize the reported statistics\n\n\n\nlabel: change or customize variable labels"
+  },
+  {
+    "objectID": "slides/index.html#customize-tbl_summary-output-4",
+    "href": "slides/index.html#customize-tbl_summary-output-4",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Customize tbl_summary() output",
+    "text": "Customize tbl_summary() output\n\n\ntbl_summary(\n  df,\n  by = Raised_BP,\n  type = BMI ~ \"continuous2\",\n  include = c(Gender, Age_Group, BMI),\n  statistic = \n    list(\n      BMI ~ c(\"{mean} ({sd})\", \n              \"{min}, {max}\"), \n      Gender ~ \"{n} / {N} ({p}%)\"\n    ),\n  label = \n    Age_Group ~ \"Age Group\",\n  digits = list(all_continuous()~1,\n                all_categorical()~ c(0,1))\n)\n\n\n\n\n\n\nCharacteristic\n\n\nNo, N = 2,1751\n\n\nYes, N = 8251\n\n\n\n\n\n\nGender\n\n\n\n\n\n\n\n\n    Men\n\n\n744 / 2,175.0 (34%)\n\n\n295 / 825.0 (36%)\n\n\n\n\n    Women\n\n\n1,431 / 2,175.0 (66%)\n\n\n530 / 825.0 (64%)\n\n\n\n\nAge Group\n\n\n\n\n\n\n\n\n    18-30\n\n\n636 (29.2%)\n\n\n55 (6.7%)\n\n\n\n\n    30-44\n\n\n868 (39.9%)\n\n\n229 (27.8%)\n\n\n\n\n    44-59\n\n\n495 (22.8%)\n\n\n304 (36.8%)\n\n\n\n\n    59-69\n\n\n176 (8.1%)\n\n\n237 (28.7%)\n\n\n\n\nBMI\n\n\n\n\n\n\n\n\n    Mean (SD)\n\n\n20.5 (3.9)\n\n\n22.5 (4.8)\n\n\n\n\n    Range\n\n\n11.9, 47.8\n\n\n13.5, 47.8\n\n\n\n\n    Unknown\n\n\n70\n\n\n8\n\n\n\n\n\n\n1 n / N (%); n (%)\n\n\n\n\n\n\n\n\n\n\n\nby: specify a column variable for cross-tabulation\ntype: specify the summary type\nstatistic: customize the reported statistics\n\n\n\nlabel: change or customize variable labels\ndigits: specify the number of decimal places for rounding"
+  },
+  {
+    "objectID": "slides/index.html#gtsummary-formulas",
+    "href": "slides/index.html#gtsummary-formulas",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "{gtsummary} + formulas",
+    "text": "{gtsummary} + formulas\n\n\n\nNamed list are OK too! label = list(age = \"Patient Age\")"
+  },
+  {
+    "objectID": "slides/index.html#add-on-functions-in-gtsummary",
+    "href": "slides/index.html#add-on-functions-in-gtsummary",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Add-on functions in {gtsummary}",
+    "text": "Add-on functions in {gtsummary}\ntbl_summary() objects can also be updated using related functions.\n\nadd_*() add additional column of statistics or information, e.g. p-values, q-values, overall statistics, treatment differences, N obs., and more\nmodify_*() modify table headers, spanning headers, footnotes, and more\nbold_*()/italicize_*() style labels, variable levels, significant p-values"
+  },
+  {
+    "objectID": "slides/index.html#update-tbl_summary-with-add_",
+    "href": "slides/index.html#update-tbl_summary-with-add_",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Update tbl_summary() with add_*()",
+    "text": "Update tbl_summary() with add_*()\n\n\ndf |>\n  tbl_summary(\n    by = Raised_BP\n  ) |> \n  add_p() \n\n\n\n\n\n\nCharacteristic\n\n\nNo, N = 2,1751\n\n\nYes, N = 8251\n\n\np-value2\n\n\n\n\n\n\nGender\n\n\n\n\n\n\n0.4\n\n\n\n\n    Men\n\n\n744 (34%)\n\n\n295 (36%)\n\n\n\n\n\n\n    Women\n\n\n1,431 (66%)\n\n\n530 (64%)\n\n\n\n\n\n\nAge\n\n\n35 (28, 46)\n\n\n50 (40, 60)\n\n\n<0.001\n\n\n\n\nAge_Group\n\n\n\n\n\n\n<0.001\n\n\n\n\n    18-30\n\n\n636 (29%)\n\n\n55 (6.7%)\n\n\n\n\n\n\n    30-44\n\n\n868 (40%)\n\n\n229 (28%)\n\n\n\n\n\n\n    44-59\n\n\n495 (23%)\n\n\n304 (37%)\n\n\n\n\n\n\n    59-69\n\n\n176 (8.1%)\n\n\n237 (29%)\n\n\n\n\n\n\nEducation\n\n\n\n\n\n\n<0.001\n\n\n\n\n    Higher Secondary +\n\n\n610 (28%)\n\n\n222 (27%)\n\n\n\n\n\n\n    Illiterate\n\n\n790 (36%)\n\n\n372 (45%)\n\n\n\n\n\n\n    Primary\n\n\n372 (17%)\n\n\n121 (15%)\n\n\n\n\n\n\n    Secondary\n\n\n403 (19%)\n\n\n110 (13%)\n\n\n\n\n\n\nSBP\n\n\n119 (111, 127)\n\n\n149 (142, 161)\n\n\n<0.001\n\n\n\n\n    Unknown\n\n\n26\n\n\n0\n\n\n\n\n\n\nDBP\n\n\n75 (69, 80)\n\n\n91 (83, 97)\n\n\n<0.001\n\n\n\n\n    Unknown\n\n\n26\n\n\n0\n\n\n\n\n\n\nBMI\n\n\n19.7 (17.7, 22.4)\n\n\n21.8 (18.9, 25.3)\n\n\n<0.001\n\n\n\n\n    Unknown\n\n\n70\n\n\n8\n\n\n\n\n\n\nLDL\n\n\n55 (42, 72)\n\n\n61 (43, 82)\n\n\n<0.001\n\n\n\n\nSmoking\n\n\n187 (8.6%)\n\n\n88 (11%)\n\n\n0.080\n\n\n\n\nPhysical_Inactivity\n\n\n426 (20%)\n\n\n168 (20%)\n\n\n0.6\n\n\n\n\nDistrict\n\n\n\n\n\n\n<0.001\n\n\n\n\n    Balaghat\n\n\n236 (11%)\n\n\n121 (15%)\n\n\n\n\n\n\n    Bhopal\n\n\n303 (14%)\n\n\n135 (16%)\n\n\n\n\n\n\n    Damoh\n\n\n168 (7.7%)\n\n\n50 (6.1%)\n\n\n\n\n\n\n    Dhar\n\n\n292 (13%)\n\n\n137 (17%)\n\n\n\n\n\n\n    Dindori\n\n\n103 (4.7%)\n\n\n38 (4.6%)\n\n\n\n\n\n\n    Hoshangabad\n\n\n182 (8.4%)\n\n\n53 (6.4%)\n\n\n\n\n\n\n    Ratlam\n\n\n218 (10%)\n\n\n63 (7.6%)\n\n\n\n\n\n\n    Satna\n\n\n356 (16%)\n\n\n96 (12%)\n\n\n\n\n\n\n    Sheopur\n\n\n82 (3.8%)\n\n\n33 (4.0%)\n\n\n\n\n\n\n    Shivpuri\n\n\n235 (11%)\n\n\n99 (12%)\n\n\n\n\n\n\nWSTEP3\n\n\n16,469 (14,982, 22,945)\n\n\n14,644 (9,505, 16,230)\n\n\n<0.001\n\n\n\n\n\n\n1 n (%); Median (IQR)\n\n\n\n\n2 Pearson’s Chi-squared test; Wilcoxon rank sum test\n\n\n\n\n\n\n\n\nadd_p(): adds a column of p-values"
+  },
+  {
+    "objectID": "slides/index.html#update-tbl_summary-with-add_-1",
+    "href": "slides/index.html#update-tbl_summary-with-add_-1",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Update tbl_summary() with add_*()",
+    "text": "Update tbl_summary() with add_*()\n\n\ndf |>\n  tbl_summary(\n    by = Raised_BP,\n    missing = \"no\"\n  ) |> \n  add_overall()\n\n\n\n\n\n\nCharacteristic\n\n\nOverall, N = 3,0001\n\n\nNo, N = 2,1751\n\n\nYes, N = 8251\n\n\n\n\n\n\nGender\n\n\n\n\n\n\n\n\n\n\n    Men\n\n\n1,039 (35%)\n\n\n744 (34%)\n\n\n295 (36%)\n\n\n\n\n    Women\n\n\n1,961 (65%)\n\n\n1,431 (66%)\n\n\n530 (64%)\n\n\n\n\nAge\n\n\n40 (30, 51)\n\n\n35 (28, 46)\n\n\n50 (40, 60)\n\n\n\n\nAge_Group\n\n\n\n\n\n\n\n\n\n\n    18-30\n\n\n691 (23%)\n\n\n636 (29%)\n\n\n55 (6.7%)\n\n\n\n\n    30-44\n\n\n1,097 (37%)\n\n\n868 (40%)\n\n\n229 (28%)\n\n\n\n\n    44-59\n\n\n799 (27%)\n\n\n495 (23%)\n\n\n304 (37%)\n\n\n\n\n    59-69\n\n\n413 (14%)\n\n\n176 (8.1%)\n\n\n237 (29%)\n\n\n\n\nEducation\n\n\n\n\n\n\n\n\n\n\n    Higher Secondary +\n\n\n832 (28%)\n\n\n610 (28%)\n\n\n222 (27%)\n\n\n\n\n    Illiterate\n\n\n1,162 (39%)\n\n\n790 (36%)\n\n\n372 (45%)\n\n\n\n\n    Primary\n\n\n493 (16%)\n\n\n372 (17%)\n\n\n121 (15%)\n\n\n\n\n    Secondary\n\n\n513 (17%)\n\n\n403 (19%)\n\n\n110 (13%)\n\n\n\n\nSBP\n\n\n125 (114, 138)\n\n\n119 (111, 127)\n\n\n149 (142, 161)\n\n\n\n\nDBP\n\n\n78 (71, 85)\n\n\n75 (69, 80)\n\n\n91 (83, 97)\n\n\n\n\nBMI\n\n\n20.2 (18.0, 23.3)\n\n\n19.7 (17.7, 22.4)\n\n\n21.8 (18.9, 25.3)\n\n\n\n\nLDL\n\n\n57 (42, 75)\n\n\n55 (42, 72)\n\n\n61 (43, 82)\n\n\n\n\nSmoking\n\n\n275 (9.2%)\n\n\n187 (8.6%)\n\n\n88 (11%)\n\n\n\n\nPhysical_Inactivity\n\n\n594 (20%)\n\n\n426 (20%)\n\n\n168 (20%)\n\n\n\n\nDistrict\n\n\n\n\n\n\n\n\n\n\n    Balaghat\n\n\n357 (12%)\n\n\n236 (11%)\n\n\n121 (15%)\n\n\n\n\n    Bhopal\n\n\n438 (15%)\n\n\n303 (14%)\n\n\n135 (16%)\n\n\n\n\n    Damoh\n\n\n218 (7.3%)\n\n\n168 (7.7%)\n\n\n50 (6.1%)\n\n\n\n\n    Dhar\n\n\n429 (14%)\n\n\n292 (13%)\n\n\n137 (17%)\n\n\n\n\n    Dindori\n\n\n141 (4.7%)\n\n\n103 (4.7%)\n\n\n38 (4.6%)\n\n\n\n\n    Hoshangabad\n\n\n235 (7.8%)\n\n\n182 (8.4%)\n\n\n53 (6.4%)\n\n\n\n\n    Ratlam\n\n\n281 (9.4%)\n\n\n218 (10%)\n\n\n63 (7.6%)\n\n\n\n\n    Satna\n\n\n452 (15%)\n\n\n356 (16%)\n\n\n96 (12%)\n\n\n\n\n    Sheopur\n\n\n115 (3.8%)\n\n\n82 (3.8%)\n\n\n33 (4.0%)\n\n\n\n\n    Shivpuri\n\n\n334 (11%)\n\n\n235 (11%)\n\n\n99 (12%)\n\n\n\n\nWSTEP3\n\n\n16,031 (14,218, 17,604)\n\n\n16,469 (14,982, 22,945)\n\n\n14,644 (9,505, 16,230)\n\n\n\n\n\n\n1 n (%); Median (IQR)\n\n\n\n\n\n\n\n\nadd_overall(): adds a column of overall statistics"
+  },
+  {
+    "objectID": "slides/index.html#update-tbl_summary-with-add_-2",
+    "href": "slides/index.html#update-tbl_summary-with-add_-2",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Update tbl_summary() with add_*()",
+    "text": "Update tbl_summary() with add_*()\n\n\ndf |>\n  tbl_summary(\n    by = Raised_BP,\n    missing = \"no\"\n  ) |> \n  add_overall() |> \n  add_n()\n\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nOverall, N = 3,0001\n\n\nNo, N = 2,1751\n\n\nYes, N = 8251\n\n\n\n\n\n\nGender\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n    Men\n\n\n\n\n1,039 (35%)\n\n\n744 (34%)\n\n\n295 (36%)\n\n\n\n\n    Women\n\n\n\n\n1,961 (65%)\n\n\n1,431 (66%)\n\n\n530 (64%)\n\n\n\n\nAge\n\n\n3,000\n\n\n40 (30, 51)\n\n\n35 (28, 46)\n\n\n50 (40, 60)\n\n\n\n\nAge_Group\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n    18-30\n\n\n\n\n691 (23%)\n\n\n636 (29%)\n\n\n55 (6.7%)\n\n\n\n\n    30-44\n\n\n\n\n1,097 (37%)\n\n\n868 (40%)\n\n\n229 (28%)\n\n\n\n\n    44-59\n\n\n\n\n799 (27%)\n\n\n495 (23%)\n\n\n304 (37%)\n\n\n\n\n    59-69\n\n\n\n\n413 (14%)\n\n\n176 (8.1%)\n\n\n237 (29%)\n\n\n\n\nEducation\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n    Higher Secondary +\n\n\n\n\n832 (28%)\n\n\n610 (28%)\n\n\n222 (27%)\n\n\n\n\n    Illiterate\n\n\n\n\n1,162 (39%)\n\n\n790 (36%)\n\n\n372 (45%)\n\n\n\n\n    Primary\n\n\n\n\n493 (16%)\n\n\n372 (17%)\n\n\n121 (15%)\n\n\n\n\n    Secondary\n\n\n\n\n513 (17%)\n\n\n403 (19%)\n\n\n110 (13%)\n\n\n\n\nSBP\n\n\n2,974\n\n\n125 (114, 138)\n\n\n119 (111, 127)\n\n\n149 (142, 161)\n\n\n\n\nDBP\n\n\n2,974\n\n\n78 (71, 85)\n\n\n75 (69, 80)\n\n\n91 (83, 97)\n\n\n\n\nBMI\n\n\n2,922\n\n\n20.2 (18.0, 23.3)\n\n\n19.7 (17.7, 22.4)\n\n\n21.8 (18.9, 25.3)\n\n\n\n\nLDL\n\n\n3,000\n\n\n57 (42, 75)\n\n\n55 (42, 72)\n\n\n61 (43, 82)\n\n\n\n\nSmoking\n\n\n3,000\n\n\n275 (9.2%)\n\n\n187 (8.6%)\n\n\n88 (11%)\n\n\n\n\nPhysical_Inactivity\n\n\n3,000\n\n\n594 (20%)\n\n\n426 (20%)\n\n\n168 (20%)\n\n\n\n\nDistrict\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n    Balaghat\n\n\n\n\n357 (12%)\n\n\n236 (11%)\n\n\n121 (15%)\n\n\n\n\n    Bhopal\n\n\n\n\n438 (15%)\n\n\n303 (14%)\n\n\n135 (16%)\n\n\n\n\n    Damoh\n\n\n\n\n218 (7.3%)\n\n\n168 (7.7%)\n\n\n50 (6.1%)\n\n\n\n\n    Dhar\n\n\n\n\n429 (14%)\n\n\n292 (13%)\n\n\n137 (17%)\n\n\n\n\n    Dindori\n\n\n\n\n141 (4.7%)\n\n\n103 (4.7%)\n\n\n38 (4.6%)\n\n\n\n\n    Hoshangabad\n\n\n\n\n235 (7.8%)\n\n\n182 (8.4%)\n\n\n53 (6.4%)\n\n\n\n\n    Ratlam\n\n\n\n\n281 (9.4%)\n\n\n218 (10%)\n\n\n63 (7.6%)\n\n\n\n\n    Satna\n\n\n\n\n452 (15%)\n\n\n356 (16%)\n\n\n96 (12%)\n\n\n\n\n    Sheopur\n\n\n\n\n115 (3.8%)\n\n\n82 (3.8%)\n\n\n33 (4.0%)\n\n\n\n\n    Shivpuri\n\n\n\n\n334 (11%)\n\n\n235 (11%)\n\n\n99 (12%)\n\n\n\n\nWSTEP3\n\n\n3,000\n\n\n16,031 (14,218, 17,604)\n\n\n16,469 (14,982, 22,945)\n\n\n14,644 (9,505, 16,230)\n\n\n\n\n\n\n1 n (%); Median (IQR)\n\n\n\n\n\n\n\n\nadd_overall(): adds a column of overall statistics\nadd_n(): adds a column with the sample size"
+  },
+  {
+    "objectID": "slides/index.html#update-tbl_summary-with-add_-3",
+    "href": "slides/index.html#update-tbl_summary-with-add_-3",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Update tbl_summary() with add_*()",
+    "text": "Update tbl_summary() with add_*()\n\n\ndf |>\n  tbl_summary(\n    by = Raised_BP,\n    missing = \"no\"\n  ) |> \n  add_overall() |> \n  add_n() |> \n  add_stat_label(\n    label = all_categorical() ~ \"No. (%)\"\n  ) \n\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nOverall, N = 3,000\n\n\nNo, N = 2,175\n\n\nYes, N = 825\n\n\n\n\n\n\nGender, No. (%)\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n    Men\n\n\n\n\n1,039 (35%)\n\n\n744 (34%)\n\n\n295 (36%)\n\n\n\n\n    Women\n\n\n\n\n1,961 (65%)\n\n\n1,431 (66%)\n\n\n530 (64%)\n\n\n\n\nAge, Median (IQR)\n\n\n3,000\n\n\n40 (30, 51)\n\n\n35 (28, 46)\n\n\n50 (40, 60)\n\n\n\n\nAge_Group, No. (%)\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n    18-30\n\n\n\n\n691 (23%)\n\n\n636 (29%)\n\n\n55 (6.7%)\n\n\n\n\n    30-44\n\n\n\n\n1,097 (37%)\n\n\n868 (40%)\n\n\n229 (28%)\n\n\n\n\n    44-59\n\n\n\n\n799 (27%)\n\n\n495 (23%)\n\n\n304 (37%)\n\n\n\n\n    59-69\n\n\n\n\n413 (14%)\n\n\n176 (8.1%)\n\n\n237 (29%)\n\n\n\n\nEducation, No. (%)\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n    Higher Secondary +\n\n\n\n\n832 (28%)\n\n\n610 (28%)\n\n\n222 (27%)\n\n\n\n\n    Illiterate\n\n\n\n\n1,162 (39%)\n\n\n790 (36%)\n\n\n372 (45%)\n\n\n\n\n    Primary\n\n\n\n\n493 (16%)\n\n\n372 (17%)\n\n\n121 (15%)\n\n\n\n\n    Secondary\n\n\n\n\n513 (17%)\n\n\n403 (19%)\n\n\n110 (13%)\n\n\n\n\nSBP, Median (IQR)\n\n\n2,974\n\n\n125 (114, 138)\n\n\n119 (111, 127)\n\n\n149 (142, 161)\n\n\n\n\nDBP, Median (IQR)\n\n\n2,974\n\n\n78 (71, 85)\n\n\n75 (69, 80)\n\n\n91 (83, 97)\n\n\n\n\nBMI, Median (IQR)\n\n\n2,922\n\n\n20.2 (18.0, 23.3)\n\n\n19.7 (17.7, 22.4)\n\n\n21.8 (18.9, 25.3)\n\n\n\n\nLDL, Median (IQR)\n\n\n3,000\n\n\n57 (42, 75)\n\n\n55 (42, 72)\n\n\n61 (43, 82)\n\n\n\n\nSmoking, No. (%)\n\n\n3,000\n\n\n275 (9.2%)\n\n\n187 (8.6%)\n\n\n88 (11%)\n\n\n\n\nPhysical_Inactivity, No. (%)\n\n\n3,000\n\n\n594 (20%)\n\n\n426 (20%)\n\n\n168 (20%)\n\n\n\n\nDistrict, No. (%)\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n    Balaghat\n\n\n\n\n357 (12%)\n\n\n236 (11%)\n\n\n121 (15%)\n\n\n\n\n    Bhopal\n\n\n\n\n438 (15%)\n\n\n303 (14%)\n\n\n135 (16%)\n\n\n\n\n    Damoh\n\n\n\n\n218 (7.3%)\n\n\n168 (7.7%)\n\n\n50 (6.1%)\n\n\n\n\n    Dhar\n\n\n\n\n429 (14%)\n\n\n292 (13%)\n\n\n137 (17%)\n\n\n\n\n    Dindori\n\n\n\n\n141 (4.7%)\n\n\n103 (4.7%)\n\n\n38 (4.6%)\n\n\n\n\n    Hoshangabad\n\n\n\n\n235 (7.8%)\n\n\n182 (8.4%)\n\n\n53 (6.4%)\n\n\n\n\n    Ratlam\n\n\n\n\n281 (9.4%)\n\n\n218 (10%)\n\n\n63 (7.6%)\n\n\n\n\n    Satna\n\n\n\n\n452 (15%)\n\n\n356 (16%)\n\n\n96 (12%)\n\n\n\n\n    Sheopur\n\n\n\n\n115 (3.8%)\n\n\n82 (3.8%)\n\n\n33 (4.0%)\n\n\n\n\n    Shivpuri\n\n\n\n\n334 (11%)\n\n\n235 (11%)\n\n\n99 (12%)\n\n\n\n\nWSTEP3, Median (IQR)\n\n\n3,000\n\n\n16,031 (14,218, 17,604)\n\n\n16,469 (14,982, 22,945)\n\n\n14,644 (9,505, 16,230)\n\n\n\n\n\n\n\n\nadd_overall(): adds a column of overall statistics\nadd_n(): adds a column with the sample size\nadd_stat_label(): adds a description of the reported statistic"
+  },
+  {
+    "objectID": "slides/index.html#update-with-bold_italicize_",
+    "href": "slides/index.html#update-with-bold_italicize_",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Update with bold_*()/italicize_*()",
+    "text": "Update with bold_*()/italicize_*()\n\n\ndf |>\n  tbl_summary(\n    by = Raised_BP\n  ) |>\n  add_p() |> \n  bold_labels() |> \n  italicize_levels() |> \n  bold_p(t = 0.8)\n\n\n\n\n\n\nCharacteristic\n\n\nNo, N = 2,1751\n\n\nYes, N = 8251\n\n\np-value2\n\n\n\n\n\n\nGender\n\n\n\n\n\n\n0.4\n\n\n\n\n    Men\n\n\n744 (34%)\n\n\n295 (36%)\n\n\n\n\n\n\n    Women\n\n\n1,431 (66%)\n\n\n530 (64%)\n\n\n\n\n\n\nAge\n\n\n35 (28, 46)\n\n\n50 (40, 60)\n\n\n<0.001\n\n\n\n\nAge_Group\n\n\n\n\n\n\n<0.001\n\n\n\n\n    18-30\n\n\n636 (29%)\n\n\n55 (6.7%)\n\n\n\n\n\n\n    30-44\n\n\n868 (40%)\n\n\n229 (28%)\n\n\n\n\n\n\n    44-59\n\n\n495 (23%)\n\n\n304 (37%)\n\n\n\n\n\n\n    59-69\n\n\n176 (8.1%)\n\n\n237 (29%)\n\n\n\n\n\n\nEducation\n\n\n\n\n\n\n<0.001\n\n\n\n\n    Higher Secondary +\n\n\n610 (28%)\n\n\n222 (27%)\n\n\n\n\n\n\n    Illiterate\n\n\n790 (36%)\n\n\n372 (45%)\n\n\n\n\n\n\n    Primary\n\n\n372 (17%)\n\n\n121 (15%)\n\n\n\n\n\n\n    Secondary\n\n\n403 (19%)\n\n\n110 (13%)\n\n\n\n\n\n\nSBP\n\n\n119 (111, 127)\n\n\n149 (142, 161)\n\n\n<0.001\n\n\n\n\n    Unknown\n\n\n26\n\n\n0\n\n\n\n\n\n\nDBP\n\n\n75 (69, 80)\n\n\n91 (83, 97)\n\n\n<0.001\n\n\n\n\n    Unknown\n\n\n26\n\n\n0\n\n\n\n\n\n\nBMI\n\n\n19.7 (17.7, 22.4)\n\n\n21.8 (18.9, 25.3)\n\n\n<0.001\n\n\n\n\n    Unknown\n\n\n70\n\n\n8\n\n\n\n\n\n\nLDL\n\n\n55 (42, 72)\n\n\n61 (43, 82)\n\n\n<0.001\n\n\n\n\nSmoking\n\n\n187 (8.6%)\n\n\n88 (11%)\n\n\n0.080\n\n\n\n\nPhysical_Inactivity\n\n\n426 (20%)\n\n\n168 (20%)\n\n\n0.6\n\n\n\n\nDistrict\n\n\n\n\n\n\n<0.001\n\n\n\n\n    Balaghat\n\n\n236 (11%)\n\n\n121 (15%)\n\n\n\n\n\n\n    Bhopal\n\n\n303 (14%)\n\n\n135 (16%)\n\n\n\n\n\n\n    Damoh\n\n\n168 (7.7%)\n\n\n50 (6.1%)\n\n\n\n\n\n\n    Dhar\n\n\n292 (13%)\n\n\n137 (17%)\n\n\n\n\n\n\n    Dindori\n\n\n103 (4.7%)\n\n\n38 (4.6%)\n\n\n\n\n\n\n    Hoshangabad\n\n\n182 (8.4%)\n\n\n53 (6.4%)\n\n\n\n\n\n\n    Ratlam\n\n\n218 (10%)\n\n\n63 (7.6%)\n\n\n\n\n\n\n    Satna\n\n\n356 (16%)\n\n\n96 (12%)\n\n\n\n\n\n\n    Sheopur\n\n\n82 (3.8%)\n\n\n33 (4.0%)\n\n\n\n\n\n\n    Shivpuri\n\n\n235 (11%)\n\n\n99 (12%)\n\n\n\n\n\n\nWSTEP3\n\n\n16,469 (14,982, 22,945)\n\n\n14,644 (9,505, 16,230)\n\n\n<0.001\n\n\n\n\n\n\n1 n (%); Median (IQR)\n\n\n\n\n2 Pearson’s Chi-squared test; Wilcoxon rank sum test\n\n\n\n\n\n\n\n\nbold_labels(): bold the variable labels\nitalicize_levels(): italicize the variable levels\nbold_p(): bold p-values according a specified threshold"
+  },
+  {
+    "objectID": "slides/index.html#update-tbl_summary-with-modify_",
+    "href": "slides/index.html#update-tbl_summary-with-modify_",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Update tbl_summary() with modify_*()",
+    "text": "Update tbl_summary() with modify_*()\n\n\ntbl <-\n  df |> \n  tbl_summary(by = Raised_BP, \n              missing = \"no\") |>\n  modify_header(\n      stat_1 ~ \"**No raised BP**\",\n      stat_2 ~ \"**Raised BP**\"\n  ) |> \n  modify_spanning_header(\n    all_stat_cols() ~ \"**BP Status**\") |> \n  modify_footnote(\n    all_stat_cols() ~ \n      paste(\"median (IQR) for continuous;\",\n            \"n (%) for categorical\")\n  )\ntbl\n\n\n\n\n\n\nCharacteristic\n\n\nBP Status\n\n\n\n\nNo raised BP1\n\n\nRaised BP1\n\n\n\n\n\n\nGender\n\n\n\n\n\n\n\n\n    Men\n\n\n744 (34%)\n\n\n295 (36%)\n\n\n\n\n    Women\n\n\n1,431 (66%)\n\n\n530 (64%)\n\n\n\n\nAge\n\n\n35 (28, 46)\n\n\n50 (40, 60)\n\n\n\n\nAge_Group\n\n\n\n\n\n\n\n\n    18-30\n\n\n636 (29%)\n\n\n55 (6.7%)\n\n\n\n\n    30-44\n\n\n868 (40%)\n\n\n229 (28%)\n\n\n\n\n    44-59\n\n\n495 (23%)\n\n\n304 (37%)\n\n\n\n\n    59-69\n\n\n176 (8.1%)\n\n\n237 (29%)\n\n\n\n\nEducation\n\n\n\n\n\n\n\n\n    Higher Secondary +\n\n\n610 (28%)\n\n\n222 (27%)\n\n\n\n\n    Illiterate\n\n\n790 (36%)\n\n\n372 (45%)\n\n\n\n\n    Primary\n\n\n372 (17%)\n\n\n121 (15%)\n\n\n\n\n    Secondary\n\n\n403 (19%)\n\n\n110 (13%)\n\n\n\n\nSBP\n\n\n119 (111, 127)\n\n\n149 (142, 161)\n\n\n\n\nDBP\n\n\n75 (69, 80)\n\n\n91 (83, 97)\n\n\n\n\nBMI\n\n\n19.7 (17.7, 22.4)\n\n\n21.8 (18.9, 25.3)\n\n\n\n\nLDL\n\n\n55 (42, 72)\n\n\n61 (43, 82)\n\n\n\n\nSmoking\n\n\n187 (8.6%)\n\n\n88 (11%)\n\n\n\n\nPhysical_Inactivity\n\n\n426 (20%)\n\n\n168 (20%)\n\n\n\n\nDistrict\n\n\n\n\n\n\n\n\n    Balaghat\n\n\n236 (11%)\n\n\n121 (15%)\n\n\n\n\n    Bhopal\n\n\n303 (14%)\n\n\n135 (16%)\n\n\n\n\n    Damoh\n\n\n168 (7.7%)\n\n\n50 (6.1%)\n\n\n\n\n    Dhar\n\n\n292 (13%)\n\n\n137 (17%)\n\n\n\n\n    Dindori\n\n\n103 (4.7%)\n\n\n38 (4.6%)\n\n\n\n\n    Hoshangabad\n\n\n182 (8.4%)\n\n\n53 (6.4%)\n\n\n\n\n    Ratlam\n\n\n218 (10%)\n\n\n63 (7.6%)\n\n\n\n\n    Satna\n\n\n356 (16%)\n\n\n96 (12%)\n\n\n\n\n    Sheopur\n\n\n82 (3.8%)\n\n\n33 (4.0%)\n\n\n\n\n    Shivpuri\n\n\n235 (11%)\n\n\n99 (12%)\n\n\n\n\nWSTEP3\n\n\n16,469 (14,982, 22,945)\n\n\n14,644 (9,505, 16,230)\n\n\n\n\n\n\n1 median (IQR) for continuous; n (%) for categorical\n\n\n\n\n\n\n\n\nUse show_header_names() to see the internal header names available for use in modify_header()"
+  },
+  {
+    "objectID": "slides/index.html#column-names",
+    "href": "slides/index.html#column-names",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Column names",
+    "text": "Column names\n\n\nshow_header_names(tbl)\n\n\n\n\nColumn Name\nColumn Header\n\n\n\n\nlabel\nCharacteristic\n\n\nstat_1\nNo raised BP\n\n\nstat_2\nRaised BP\n\n\n\n\n\n\n\nall_stat_cols() selects columns \"stat_1\" and \"stat_2\""
+  },
+  {
+    "objectID": "slides/index.html#update-tbl_summary-with-add_-4",
+    "href": "slides/index.html#update-tbl_summary-with-add_-4",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Update tbl_summary() with add_*()",
+    "text": "Update tbl_summary() with add_*()\ndf |>\n  select(Raised_BP, SBP, BMI, LDL, Smoking) |>\n  tbl_summary(\n    by = Raised_BP,\n    statistic = list(c(SBP, BMI, LDL) ~ \"{mean} ({sd})\",\n                     Smoking ~ \"{p}%\"),\n    missing = \"no\"\n  ) |> \n  add_difference()\n\n\n\n\n\nCharacteristic\n\n\nNo, N = 2,1751\n\n\nYes, N = 8251\n\n\nDifference2\n\n\n95% CI2,3\n\n\np-value2\n\n\n\n\n\n\nSBP\n\n\n119 (11)\n\n\n153 (21)\n\n\n-34\n\n\n-35, -32\n\n\n<0.001\n\n\n\n\nBMI\n\n\n20.5 (3.9)\n\n\n22.5 (4.8)\n\n\n-2.0\n\n\n-2.4, -1.7\n\n\n<0.001\n\n\n\n\nLDL\n\n\n58 (28)\n\n\n64 (31)\n\n\n-5.4\n\n\n-7.9, -3.0\n\n\n<0.001\n\n\n\n\nSmoking\n\n\n8.6%\n\n\n11%\n\n\n-2.1%\n\n\n-4.6%, 0.43%\n\n\n0.092\n\n\n\n\n\n\n1 Mean (SD); %\n\n\n\n\n2 Welch Two Sample t-test; Two sample test for equality of proportions\n\n\n\n\n3 CI = Confidence Interval\n\n\n\n\n\n\nadd_difference(): mean and rate differences between two groups. Can also be adjusted differences"
+  },
+  {
+    "objectID": "slides/index.html#update-tbl_summary-with-add_-5",
+    "href": "slides/index.html#update-tbl_summary-with-add_-5",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Update tbl_summary() with add_*()",
+    "text": "Update tbl_summary() with add_*()\n\n\ndf |>\n  tbl_summary(\n    by = Raised_BP,\n    missing = \"no\"\n  ) |> \n  add_stat(...)\n\n\nCustomize statistics presented with add_stat()\nAdded statistics can be placed on the label or the level rows\nAdded statistics may be a single column or multiple"
+  },
+  {
+    "objectID": "slides/index.html#add-on-functions-in-gtsummary-1",
+    "href": "slides/index.html#add-on-functions-in-gtsummary-1",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Add-on functions in {gtsummary}",
+    "text": "Add-on functions in {gtsummary}\nAnd many more!\nSee the documentation at http://www.danieldsjoberg.com/gtsummary/reference/index.html\nAnd a detailed tbl_summary() vignette at http://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html"
+  },
+  {
+    "objectID": "slides/index.html#cross-tabulation-with-tbl_cross",
+    "href": "slides/index.html#cross-tabulation-with-tbl_cross",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Cross-tabulation with tbl_cross()",
+    "text": "Cross-tabulation with tbl_cross()\ntbl_cross() is a wrapper for tbl_summary() for n x m tables\n\n\ndf |>\n  tbl_cross(\n    row = District, \n    col = Raised_BP,\n    percent = \"row\",\n    margin = \"row\"\n  ) |>\n  add_p(source_note = TRUE) |>\n  bold_labels()\n\n\n\n\n\n\n\n\nRaised_BP\n\n\n\n\nNo\n\n\nYes\n\n\n\n\n\n\nDistrict\n\n\n\n\n\n\n\n\n    Balaghat\n\n\n236 (66%)\n\n\n121 (34%)\n\n\n\n\n    Bhopal\n\n\n303 (69%)\n\n\n135 (31%)\n\n\n\n\n    Damoh\n\n\n168 (77%)\n\n\n50 (23%)\n\n\n\n\n    Dhar\n\n\n292 (68%)\n\n\n137 (32%)\n\n\n\n\n    Dindori\n\n\n103 (73%)\n\n\n38 (27%)\n\n\n\n\n    Hoshangabad\n\n\n182 (77%)\n\n\n53 (23%)\n\n\n\n\n    Ratlam\n\n\n218 (78%)\n\n\n63 (22%)\n\n\n\n\n    Satna\n\n\n356 (79%)\n\n\n96 (21%)\n\n\n\n\n    Sheopur\n\n\n82 (71%)\n\n\n33 (29%)\n\n\n\n\n    Shivpuri\n\n\n235 (70%)\n\n\n99 (30%)\n\n\n\n\nTotal\n\n\n2,175 (72%)\n\n\n825 (28%)\n\n\n\n\n\n\nPearson’s Chi-squared test, p<0.001"
+  },
+  {
+    "objectID": "slides/index.html#continuous-summaries-with-tbl_continuous",
+    "href": "slides/index.html#continuous-summaries-with-tbl_continuous",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Continuous Summaries with tbl_continuous()",
+    "text": "Continuous Summaries with tbl_continuous()\ntbl_continuous() summarizes a continuous variable by 1, 2, or more categorical variables\n\n\ndf |>\n  tbl_continuous(\n    variable = SBP,\n    by = Raised_BP,\n    include = c(Age_Group, Gender)\n  ) \n\n\n\n\n\n\nCharacteristic\n\n\nNo, N = 2,1751\n\n\nYes, N = 8251\n\n\n\n\n\n\nAge_Group\n\n\n\n\n\n\n\n\n    18-30\n\n\n116 (109, 125)\n\n\n141 (134, 144)\n\n\n\n\n    30-44\n\n\n119 (112, 127)\n\n\n145 (140, 153)\n\n\n\n\n    44-59\n\n\n121 (115, 129)\n\n\n150 (142, 161)\n\n\n\n\n    59-69\n\n\n125 (116, 132)\n\n\n157 (147, 175)\n\n\n\n\nGender\n\n\n\n\n\n\n\n\n    Men\n\n\n122 (113, 129)\n\n\n148 (142, 160)\n\n\n\n\n    Women\n\n\n118 (111, 126)\n\n\n149 (142, 161)\n\n\n\n\n\n\n1 SBP: Median (IQR)"
+  },
+  {
+    "objectID": "slides/index.html#survey-data-with-tbl_svysummary",
+    "href": "slides/index.html#survey-data-with-tbl_svysummary",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Survey data with tbl_svysummary()",
+    "text": "Survey data with tbl_svysummary()\n\n\nsurvey::svydesign(\n  ids = ~1, \n  data = df, \n  weights = ~WSTEP3\n) |>\n  tbl_svysummary(\n    by = Raised_BP,\n    include = c(Age_Group, Gender, District),\n    percent = \"row\"\n  ) |>\n  add_p() |>\n  modify_spanning_header(\n    all_stat_cols() ~ \"**Raised BP**\")\n\n\n\n\n\n\nCharacteristic\n\n\nRaised BP\n\n\np-value2\n\n\n\n\nNo, N = 39,432,9561\n\n\nYes, N = 11,491,2761\n\n\n\n\n\n\nAge_Group\n\n\n\n\n\n\n<0.001\n\n\n\n\n    18-30\n\n\n16,646,634 (92%)\n\n\n1,445,876 (8.0%)\n\n\n\n\n\n\n    30-44\n\n\n14,073,391 (79%)\n\n\n3,635,210 (21%)\n\n\n\n\n\n\n    44-59\n\n\n7,322,516 (62%)\n\n\n4,524,442 (38%)\n\n\n\n\n\n\n    59-69\n\n\n1,390,415 (42%)\n\n\n1,885,747 (58%)\n\n\n\n\n\n\nGender\n\n\n\n\n\n\n0.9\n\n\n\n\n    Men\n\n\n13,472,904 (78%)\n\n\n3,889,460 (22%)\n\n\n\n\n\n\n    Women\n\n\n25,960,052 (77%)\n\n\n7,601,815 (23%)\n\n\n\n\n\n\nDistrict\n\n\n\n\n\n\n0.001\n\n\n\n\n    Balaghat\n\n\n3,785,643 (71%)\n\n\n1,533,116 (29%)\n\n\n\n\n\n\n    Bhopal\n\n\n5,737,817 (75%)\n\n\n1,935,086 (25%)\n\n\n\n\n\n\n    Damoh\n\n\n3,123,656 (81%)\n\n\n717,595 (19%)\n\n\n\n\n\n\n    Dhar\n\n\n4,812,133 (72%)\n\n\n1,829,268 (28%)\n\n\n\n\n\n\n    Dindori\n\n\n1,843,049 (78%)\n\n\n505,601 (22%)\n\n\n\n\n\n\n    Hoshangabad\n\n\n3,468,386 (82%)\n\n\n750,387 (18%)\n\n\n\n\n\n\n    Ratlam\n\n\n4,065,569 (81%)\n\n\n931,610 (19%)\n\n\n\n\n\n\n    Satna\n\n\n6,266,329 (82%)\n\n\n1,414,737 (18%)\n\n\n\n\n\n\n    Sheopur\n\n\n1,814,049 (77%)\n\n\n536,462 (23%)\n\n\n\n\n\n\n    Shivpuri\n\n\n4,516,325 (77%)\n\n\n1,337,415 (23%)\n\n\n\n\n\n\n\n\n1 n (%)\n\n\n\n\n2 chi-squared test with Rao & Scott’s second-order correction"
+  },
+  {
+    "objectID": "slides/index.html#survey-data-with-tbl_svysummary-1",
+    "href": "slides/index.html#survey-data-with-tbl_svysummary-1",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Survey data with tbl_svysummary()",
+    "text": "Survey data with tbl_svysummary()\n\n\nsurvey::svydesign(\n  ids = ~1, \n  data = df, \n  weights = ~WSTEP3\n) |>\n  tbl_svysummary(\n    by = Raised_BP,\n    include = c(Age_Group, Gender, District),\n    percent = \"row\",\n    digits = list(all_categorical() ~ 1),\n    statistic = list(all_categorical() ~ \"{p}\")\n  ) |>\n  add_p() |>\n  modify_spanning_header(\n    all_stat_cols() ~ \"**Raised BP**\")\n\n\n\n\n\n\nCharacteristic\n\n\nRaised BP\n\n\np-value2\n\n\n\n\nNo, N = 39,432,9561\n\n\nYes, N = 11,491,2761\n\n\n\n\n\n\nAge_Group\n\n\n\n\n\n\n<0.001\n\n\n\n\n    18-30\n\n\n92.0\n\n\n8.0\n\n\n\n\n\n\n    30-44\n\n\n79.5\n\n\n20.5\n\n\n\n\n\n\n    44-59\n\n\n61.8\n\n\n38.2\n\n\n\n\n\n\n    59-69\n\n\n42.4\n\n\n57.6\n\n\n\n\n\n\nGender\n\n\n\n\n\n\n0.9\n\n\n\n\n    Men\n\n\n77.6\n\n\n22.4\n\n\n\n\n\n\n    Women\n\n\n77.3\n\n\n22.7\n\n\n\n\n\n\nDistrict\n\n\n\n\n\n\n0.001\n\n\n\n\n    Balaghat\n\n\n71.2\n\n\n28.8\n\n\n\n\n\n\n    Bhopal\n\n\n74.8\n\n\n25.2\n\n\n\n\n\n\n    Damoh\n\n\n81.3\n\n\n18.7\n\n\n\n\n\n\n    Dhar\n\n\n72.5\n\n\n27.5\n\n\n\n\n\n\n    Dindori\n\n\n78.5\n\n\n21.5\n\n\n\n\n\n\n    Hoshangabad\n\n\n82.2\n\n\n17.8\n\n\n\n\n\n\n    Ratlam\n\n\n81.4\n\n\n18.6\n\n\n\n\n\n\n    Satna\n\n\n81.6\n\n\n18.4\n\n\n\n\n\n\n    Sheopur\n\n\n77.2\n\n\n22.8\n\n\n\n\n\n\n    Shivpuri\n\n\n77.2\n\n\n22.8\n\n\n\n\n\n\n\n\n1 %\n\n\n\n\n2 chi-squared test with Rao & Scott’s second-order correction"
+  },
+  {
+    "objectID": "slides/index.html#traditional-model-summary",
+    "href": "slides/index.html#traditional-model-summary",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Traditional model summary()",
+    "text": "Traditional model summary()\n\n\ndf <- df %>% \n  mutate(Raised_BP = if_else(Raised_BP==\"Yes\", 1,0))\nm1 <- \n  glm(\n    Raised_BP ~ Age + Smoking + BMI,\n    data = df,\n    family = binomial(link = \"logit\")\n  )\n\nsummary(m1)\nCall: glm(formula = Raised_BP ~ Age + Smoking + BMI, family = binomial(link = “logit”), data = df)\nDeviance Residuals: Min 1Q Median 3Q Max\n-2.4395 -0.7723 -0.4914 0.9125 2.4430\nCoefficients: Estimate Std. Error z value Pr(>|z|)\n(Intercept) -6.154933 0.298385 -20.628 <2e-16  Age 0.067720 0.003669 18.460 <2e-16  SmokingYes -0.008596 0.148722 -0.058 0.954\nBMI 0.104944 0.010593 9.907 <2e-16 ***\n\nSignif. codes: 0 ‘’ 0.001 ’’ 0.01 ’’ 0.05 ‘.’ 0.1 ’ ’ 1\n(Dispersion parameter for binomial family taken to be 1)\nNull deviance: 3463.0  on 2921  degrees of freedom\nResidual deviance: 2930.8 on 2918 degrees of freedom (78 observations deleted due to missingness) AIC: 2938.8\nNumber of Fisher Scoring iterations: 4\n\n\nLooks messy and it’s not easy to digest"
+  },
+  {
+    "objectID": "slides/index.html#basic-tbl_regression",
+    "href": "slides/index.html#basic-tbl_regression",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Basic tbl_regression()",
+    "text": "Basic tbl_regression()\n::: {.cell output-location=‘column’}\ntbl_regression(m1)\n\n\n\n\n\nCharacteristic\n\n\nlog(OR)1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n0.07\n\n\n0.06, 0.07\n\n\n<0.001\n\n\n\n\nSmoking\n\n\n\n\n\n\n\n\n\n\n    No\n\n\n—\n\n\n—\n\n\n\n\n\n\n    Yes\n\n\n-0.01\n\n\n-0.30, 0.28\n\n\n\n0.9\n\n\n\n\nBMI\n\n\n0.10\n\n\n0.08, 0.13\n\n\n<0.001\n\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n:::\n\nDisplays p-values for covariates\nShows reference levels for categorical variables\nModel type recognized as logistic regression with odds ratio appearing in header"
+  },
+  {
+    "objectID": "slides/index.html#customize-tbl_regression-output",
+    "href": "slides/index.html#customize-tbl_regression-output",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Customize tbl_regression() output",
+    "text": "Customize tbl_regression() output\n::: {.cell output-location=‘column’}\ntbl_regression(\n  m1,\n  exponentiate = TRUE\n) |> \n  add_global_p() |>\n  add_glance_table(\n    include = c(nobs,\n                logLik,\n                AIC,\n                BIC)\n  )\n\n\n\n\n\nCharacteristic\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge\n\n\n1.07\n\n\n1.06, 1.08\n\n\n<0.001\n\n\n\n\nSmoking\n\n\n\n\n\n\n\n0.9\n\n\n\n\n    No\n\n\n—\n\n\n—\n\n\n\n\n\n\n    Yes\n\n\n0.99\n\n\n0.74, 1.32\n\n\n\n\n\n\nBMI\n\n\n1.11\n\n\n1.09, 1.13\n\n\n<0.001\n\n\n\n\nNo. Obs.\n\n\n2,922\n\n\n\n\n\n\n\n\nLog-likelihood\n\n\n-1,465\n\n\n\n\n\n\n\n\nAIC\n\n\n2,939\n\n\n\n\n\n\n\n\nBIC\n\n\n2,963\n\n\n\n\n\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n:::\n\nDisplay odds ratio estimates and confidence intervals\nAdd global p-values\nAdd various model statistics"
+  },
+  {
+    "objectID": "slides/index.html#supported-models-in-tbl_regression",
+    "href": "slides/index.html#supported-models-in-tbl_regression",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Supported models in tbl_regression()",
+    "text": "Supported models in tbl_regression()\n\n\n\nbiglm::bigglm() \nbiglmm::bigglm() \nbrms::brm() \ncmprsk::crr() \nfixest::feglm() \nfixest::femlm() \nfixest::feNmlm() \nfixest::feols() \ngam::gam() \ngeepack::geeglm() \nglmmTMB::glmmTMB() \nlavaan::lavaan() \n\n\n\nlfe::felm() \nlme4::glmer() \nlme4::glmer.nb() \nlme4::lmer() \nMASS::glm.nb() \nMASS::polr() \nmgcv::gam() \nmice::mira \nnnet::multinom() \nordinal::clm() \nordinal::clmm() \nparsnip::model_fit \n\n\n\nplm::plm() \nrstanarm::stan_glm() \nstats::aov() \nstats::glm() \nstats::lm() \nstats::nls() \nsurvey::svycoxph() \nsurvey::svyglm() \nsurvey::svyolr() \nsurvival::clogit() \nsurvival::coxph() \nsurvival::survreg() \ntidycmprsk::crr() \nVGAM::vglm() \n\n\n\nCustom tidiers can be written and passed to tbl_regression() using the tidy_fun= argument."
+  },
+  {
+    "objectID": "slides/index.html#univariate-models-with-tbl_uvregression",
+    "href": "slides/index.html#univariate-models-with-tbl_uvregression",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Univariate models with tbl_uvregression()",
+    "text": "Univariate models with tbl_uvregression()\n\n\ntbl_uvreg <- \n  df |> \n  select(-District, -WSTEP3, - SBP, -DBP) |> \n  tbl_uvregression(\n    method = glm,\n    y = Raised_BP,\n    method.args = \n      list(family = binomial),\n    exponentiate = TRUE\n  )\ntbl_uvreg\n\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nGender\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n    Men\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\n    Women\n\n\n\n\n0.93\n\n\n0.79, 1.11\n\n\n0.4\n\n\n\n\nAge\n\n\n3,000\n\n\n1.07\n\n\n1.06, 1.08\n\n\n<0.001\n\n\n\n\nAge_Group\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n    18-30\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\n    30-44\n\n\n\n\n3.05\n\n\n2.25, 4.20\n\n\n<0.001\n\n\n\n\n    44-59\n\n\n\n\n7.10\n\n\n5.25, 9.77\n\n\n<0.001\n\n\n\n\n    59-69\n\n\n\n\n15.6\n\n\n11.2, 22.0\n\n\n<0.001\n\n\n\n\nEducation\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n    Higher Secondary +\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\n    Illiterate\n\n\n\n\n1.29\n\n\n1.06, 1.58\n\n\n0.010\n\n\n\n\n    Primary\n\n\n\n\n0.89\n\n\n0.69, 1.15\n\n\n0.4\n\n\n\n\n    Secondary\n\n\n\n\n0.75\n\n\n0.58, 0.97\n\n\n0.031\n\n\n\n\nBMI\n\n\n2,922\n\n\n1.12\n\n\n1.09, 1.14\n\n\n<0.001\n\n\n\n\nLDL\n\n\n3,000\n\n\n1.01\n\n\n1.00, 1.01\n\n\n<0.001\n\n\n\n\nSmoking\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n    No\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\n    Yes\n\n\n\n\n1.27\n\n\n0.97, 1.65\n\n\n0.080\n\n\n\n\nPhysical_Inactivity\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n    No\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\n    Yes\n\n\n\n\n1.05\n\n\n0.86, 1.28\n\n\n0.6\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\n\nSpecify model method, method.args, and the response variable\nArguments and helper functions like exponentiate, bold_*(), add_global_p() can also be used with tbl_uvregression()"
+  },
+  {
+    "objectID": "slides/index.html#tbl_merge-for-side-by-side-tables",
+    "href": "slides/index.html#tbl_merge-for-side-by-side-tables",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "tbl_merge() for side-by-side tables",
+    "text": "tbl_merge() for side-by-side tables\n\n\nA univariable table:\ntbl_uvreg <- \n  df |> \n  select(-District, -WSTEP3, - SBP, -DBP) |> \n  tbl_uvregression(\n    method = glm,\n    y = Raised_BP,\n    method.args = \n      list(family = binomial),\n    exponentiate = TRUE\n  )\ntbl_uvreg\n\n\n\n\n\nCharacteristic\n\n\nN\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nGender\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n    Men\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\n    Women\n\n\n\n\n0.93\n\n\n0.79, 1.11\n\n\n0.4\n\n\n\n\nAge\n\n\n3,000\n\n\n1.07\n\n\n1.06, 1.08\n\n\n<0.001\n\n\n\n\nAge_Group\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n    18-30\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\n    30-44\n\n\n\n\n3.05\n\n\n2.25, 4.20\n\n\n<0.001\n\n\n\n\n    44-59\n\n\n\n\n7.10\n\n\n5.25, 9.77\n\n\n<0.001\n\n\n\n\n    59-69\n\n\n\n\n15.6\n\n\n11.2, 22.0\n\n\n<0.001\n\n\n\n\nEducation\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n    Higher Secondary +\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\n    Illiterate\n\n\n\n\n1.29\n\n\n1.06, 1.58\n\n\n0.010\n\n\n\n\n    Primary\n\n\n\n\n0.89\n\n\n0.69, 1.15\n\n\n0.4\n\n\n\n\n    Secondary\n\n\n\n\n0.75\n\n\n0.58, 0.97\n\n\n0.031\n\n\n\n\nBMI\n\n\n2,922\n\n\n1.12\n\n\n1.09, 1.14\n\n\n<0.001\n\n\n\n\nLDL\n\n\n3,000\n\n\n1.01\n\n\n1.00, 1.01\n\n\n<0.001\n\n\n\n\nSmoking\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n    No\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\n    Yes\n\n\n\n\n1.27\n\n\n0.97, 1.65\n\n\n0.080\n\n\n\n\nPhysical_Inactivity\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n    No\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\n    Yes\n\n\n\n\n1.05\n\n\n0.86, 1.28\n\n\n0.6\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\nA multivariable table:\ntbl_mvreg <- \n  glm(\n    Raised_BP ~ Age_Group + Smoking + BMI + LDL,\n    data = df,\n    family = binomial(link = \"logit\")\n  ) |> \n  tbl_regression(\n    exponentiate = TRUE\n  ) |> \n  add_global_p() \ntbl_mvreg\n\n\n\n\n\nCharacteristic\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nAge_Group\n\n\n\n\n\n\n<0.001\n\n\n\n\n    18-30\n\n\n—\n\n\n—\n\n\n\n\n\n\n    30-44\n\n\n2.47\n\n\n1.79, 3.44\n\n\n\n\n\n\n    44-59\n\n\n5.82\n\n\n4.23, 8.12\n\n\n\n\n\n\n    59-69\n\n\n14.6\n\n\n10.3, 21.0\n\n\n\n\n\n\nSmoking\n\n\n\n\n\n\n0.8\n\n\n\n\n    No\n\n\n—\n\n\n—\n\n\n\n\n\n\n    Yes\n\n\n1.03\n\n\n0.77, 1.38\n\n\n\n\n\n\nBMI\n\n\n1.11\n\n\n1.09, 1.13\n\n\n<0.001\n\n\n\n\nLDL\n\n\n1.00\n\n\n1.00, 1.00\n\n\n0.7\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval"
+  },
+  {
+    "objectID": "slides/index.html#tbl_merge-for-side-by-side-tables-1",
+    "href": "slides/index.html#tbl_merge-for-side-by-side-tables-1",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "tbl_merge() for side-by-side tables",
+    "text": "tbl_merge() for side-by-side tables\ntbl_merge(\n  list(tbl_uvreg, tbl_mvreg),\n  tab_spanner = c(\"**Univariable**\", \"**Multivariable**\")\n)\n\n\n\n\n\nCharacteristic\n\n\nUnivariable\n\n\nMultivariable\n\n\n\n\nN\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\nOR1\n\n\n95% CI1\n\n\np-value\n\n\n\n\n\n\nGender\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Men\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\n\n\n\n\n\n\n    Women\n\n\n\n\n0.93\n\n\n0.79, 1.11\n\n\n0.4\n\n\n\n\n\n\n\n\n\n\nAge\n\n\n3,000\n\n\n1.07\n\n\n1.06, 1.08\n\n\n<0.001\n\n\n\n\n\n\n\n\n\n\nAge_Group\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n\n\n<0.001\n\n\n\n\n    18-30\n\n\n\n\n—\n\n\n—\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\n    30-44\n\n\n\n\n3.05\n\n\n2.25, 4.20\n\n\n<0.001\n\n\n2.47\n\n\n1.79, 3.44\n\n\n\n\n\n\n    44-59\n\n\n\n\n7.10\n\n\n5.25, 9.77\n\n\n<0.001\n\n\n5.82\n\n\n4.23, 8.12\n\n\n\n\n\n\n    59-69\n\n\n\n\n15.6\n\n\n11.2, 22.0\n\n\n<0.001\n\n\n14.6\n\n\n10.3, 21.0\n\n\n\n\n\n\nEducation\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Higher Secondary +\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\n\n\n\n\n\n\n    Illiterate\n\n\n\n\n1.29\n\n\n1.06, 1.58\n\n\n0.010\n\n\n\n\n\n\n\n\n\n\n    Primary\n\n\n\n\n0.89\n\n\n0.69, 1.15\n\n\n0.4\n\n\n\n\n\n\n\n\n\n\n    Secondary\n\n\n\n\n0.75\n\n\n0.58, 0.97\n\n\n0.031\n\n\n\n\n\n\n\n\n\n\nBMI\n\n\n2,922\n\n\n1.12\n\n\n1.09, 1.14\n\n\n<0.001\n\n\n1.11\n\n\n1.09, 1.13\n\n\n<0.001\n\n\n\n\nLDL\n\n\n3,000\n\n\n1.01\n\n\n1.00, 1.01\n\n\n<0.001\n\n\n1.00\n\n\n1.00, 1.00\n\n\n0.7\n\n\n\n\nSmoking\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n\n\n0.8\n\n\n\n\n    No\n\n\n\n\n—\n\n\n—\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\n    Yes\n\n\n\n\n1.27\n\n\n0.97, 1.65\n\n\n0.080\n\n\n1.03\n\n\n0.77, 1.38\n\n\n\n\n\n\nPhysical_Inactivity\n\n\n3,000\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    No\n\n\n\n\n—\n\n\n—\n\n\n\n\n\n\n\n\n\n\n\n\n    Yes\n\n\n\n\n1.05\n\n\n0.86, 1.28\n\n\n0.6\n\n\n\n\n\n\n\n\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval"
+  },
+  {
+    "objectID": "slides/index.html#tbl_strata-for-stratified-tables",
+    "href": "slides/index.html#tbl_strata-for-stratified-tables",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "tbl_strata() for stratified tables",
+    "text": "tbl_strata() for stratified tables\ndf |>\n  mutate(Raised_BP = if_else(Raised_BP == 1, \"Raised\", \"Normal\")) |>\n  tbl_strata(\n    strata = District,\n    ~tbl_summary(.x, by = Raised_BP,\n                 percent = \"row\",\n                 missing = \"no\",\n                 include = c(Age_Group, Gender),\n                 digits = list(all_categorical() ~ 1),\n                 statistic = list(all_categorical() ~ \"{p}\")) |>\n      modify_header(all_stat_cols() ~ \"**{level}**\")\n  )\n\n\n\n\n\nCharacteristic\n\n\nBalaghat\n\n\nBhopal\n\n\nDamoh\n\n\nDhar\n\n\nDindori\n\n\nHoshangabad\n\n\nRatlam\n\n\nSatna\n\n\nSheopur\n\n\nShivpuri\n\n\n\n\nNormal1\n\n\nRaised1\n\n\nNormal1\n\n\nRaised1\n\n\nNormal1\n\n\nRaised1\n\n\nNormal1\n\n\nRaised1\n\n\nNormal1\n\n\nRaised1\n\n\nNormal1\n\n\nRaised1\n\n\nNormal1\n\n\nRaised1\n\n\nNormal1\n\n\nRaised1\n\n\nNormal1\n\n\nRaised1\n\n\nNormal1\n\n\nRaised1\n\n\n\n\n\n\nAge_Group\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    18-30\n\n\n89.5\n\n\n10.5\n\n\n91.8\n\n\n8.2\n\n\n93.3\n\n\n6.7\n\n\n87.5\n\n\n12.5\n\n\n97.0\n\n\n3.0\n\n\n93.8\n\n\n6.2\n\n\n93.8\n\n\n6.2\n\n\n90.7\n\n\n9.3\n\n\n93.9\n\n\n6.1\n\n\n96.3\n\n\n3.7\n\n\n\n\n    30-44\n\n\n74.2\n\n\n25.8\n\n\n77.5\n\n\n22.5\n\n\n89.8\n\n\n10.2\n\n\n68.0\n\n\n32.0\n\n\n78.7\n\n\n21.3\n\n\n90.2\n\n\n9.8\n\n\n76.8\n\n\n23.2\n\n\n84.8\n\n\n15.2\n\n\n81.8\n\n\n18.2\n\n\n76.5\n\n\n23.5\n\n\n\n\n    44-59\n\n\n60.9\n\n\n39.1\n\n\n58.0\n\n\n42.0\n\n\n60.0\n\n\n40.0\n\n\n59.5\n\n\n40.5\n\n\n63.4\n\n\n36.6\n\n\n64.3\n\n\n35.7\n\n\n69.2\n\n\n30.8\n\n\n68.9\n\n\n31.1\n\n\n35.0\n\n\n65.0\n\n\n61.0\n\n\n39.0\n\n\n\n\n    59-69\n\n\n37.7\n\n\n62.3\n\n\n26.8\n\n\n73.2\n\n\n44.0\n\n\n56.0\n\n\n34.2\n\n\n65.8\n\n\n40.0\n\n\n60.0\n\n\n46.2\n\n\n53.8\n\n\n63.4\n\n\n36.6\n\n\n60.3\n\n\n39.7\n\n\n44.4\n\n\n55.6\n\n\n33.3\n\n\n66.7\n\n\n\n\nGender\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    Men\n\n\n67.2\n\n\n32.8\n\n\n69.9\n\n\n30.1\n\n\n87.1\n\n\n12.9\n\n\n63.2\n\n\n36.8\n\n\n66.7\n\n\n33.3\n\n\n78.7\n\n\n21.3\n\n\n73.0\n\n\n27.0\n\n\n79.0\n\n\n21.0\n\n\n71.1\n\n\n28.9\n\n\n62.5\n\n\n37.5\n\n\n\n\n    Women\n\n\n65.5\n\n\n34.5\n\n\n69.0\n\n\n31.0\n\n\n69.6\n\n\n30.4\n\n\n71.3\n\n\n28.7\n\n\n76.3\n\n\n23.7\n\n\n76.6\n\n\n23.4\n\n\n81.3\n\n\n18.7\n\n\n78.6\n\n\n21.4\n\n\n71.4\n\n\n28.6\n\n\n74.8\n\n\n25.2\n\n\n\n\n\n\n1 %"
+  },
+  {
+    "objectID": "slides/index.html#gtsummary-website",
+    "href": "slides/index.html#gtsummary-website",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "{gtsummary} website",
+    "text": "{gtsummary} website\nhttp://www.danieldsjoberg.com/gtsummary/"
+  },
+  {
+    "objectID": "slides/index.html#section-1",
+    "href": "slides/index.html#section-1",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "",
+    "text": "Package Authors/Contributors\n\nDaniel D. Sjoberg\nMichael Curry\nJoseph Larmarange\nJessica Lavery\nKarissa Whiting\nEmily C. Zabor\nXing Bai\nEsther Drill\nJessica Flynn\nMargie Hannum\nStephanie Lobaugh\nShannon Pileggi\nAmy Tin\nGustavo Zapata Wainberg\n\n\nOther Contributors\n\n@ablack3, @ABorakati, @aghaynes, @ahinton-mmc, @aito123, @akarsteve, @akefley, @albertostefanelli, @alexis-catherine, @amygimma, @anaavu, @andrader, @angelgar, @arbet003, @arnmayer, @aspina7, @asshah4, @awcm0n, @barthelmes, @bcjaeger, @BeauMeche, @benediktclaus, @berg-michael, @bhattmaulik, @BioYork, @brachem-christian, @bwiernik, @bx259, @calebasaraba, @CarolineXGao, @ChongTienGoh, @Chris-M-P, @chrisleitzinger, @cjprobst, @clmawhorter, @CodieMonster, @coeus-analytics, @coreysparks, @ctlamb, @davidgohel, @davidkane9, @dax44, @dchiu911, @ddsjoberg, @DeFilippis, @denis-or, @dereksonderegger, @dieuv0, @discoleo, @djbirke, @dmenne, @ElfatihHasabo, @emilyvertosick, @ercbk, @erikvona, @eweisbrod, @feizhadj, @fh-jsnider, @ge-generation, @ghost, @gjones1219, @gorkang, @GuiMarthe, @hass91, @HichemLa, @hughjonesd, @iaingallagher, @ilyamusabirov, @IndrajeetPatil, @IsadoraBM, @j-tamad, @jalavery, @jeanmanguy, @jemus42, @jenifav, @jennybc, @JeremyPasco, @JesseRop, @jflynn264, @jjallaire, @jmbarajas, @jmbarbone, @JoanneF1229, @joelgautschi, @jojosgithub, @JonGretar, @jordan49er, @jthomasmock, @juseer, @jwilliman, @karissawhiting, @kendonB, @kmdono02, @kwakuduahc1, @lamhine, @larmarange, @leejasme, @loukesio, @lspeetluk, @ltin1214, @lucavd, @LuiNov, @maia-sh, @Marsus1972, @matthieu-faron, @mbac, @mdidish, @MelissaAssel, @michaelcurry1123, @mljaniczek, @moleps, @motocci, @msberends, @mvuorre, @myensr, @MyKo101, @oranwutang, @palantre, @Pascal-Schmidt, @pedersebastian, @perlatex, @philsf, @polc1410, @postgres-newbie, @proshano, @raphidoc, @RaviBot, @rich-iannone, @RiversPharmD, @rmgpanw, @roman2023, @ryzhu75, @sachijay, @saifelayan, @sammo3182, @sandhyapc, @sbalci, @sda030, @shannonpileggi, @shengchaohou, @ShixiangWang, @simonpcouch, @slb2240, @slobaugh, @spiralparagon, @StaffanBetner, @Stephonomon, @storopoli, @szimmer, @tamytsujimoto, @TarJae, @themichjam, @THIB20, @tibirkrajc, @tjmeyers, @tldrcharlene, @tormodb, @toshifumikuroda, @UAB-BST-680, @uakimix, @uriahf, @Valja64, @vvm02, @xkcococo, @yonicd, @yoursdearboy, @zabore, @zachariae, @zaddyzad, @zeyunlu, @zhengnow, @zlkrvsm, @zongell-star, and @Zoulf001."
+  },
+  {
+    "objectID": "slides/index.html#thank-you",
+    "href": "slides/index.html#thank-you",
+    "title": "Public Health Data Tabulation with {gtsummary}",
+    "section": "Thank you",
+    "text": "Thank you\n\n\n\n Ask on stackoverflow.com\n Use the gtsummary tag\n Hundreds of Qs already answered!\n\n danieldsjoberg.com\n @statistishdan\n linkedin.com/in/ddsjoberg/\n github.com/ddsjoberg\n\n\n\n\n\n[Public Health Data Tabulation with {gtsummary})"
+  }
+]

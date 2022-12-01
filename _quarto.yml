@@ -1,0 +1,51 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "!slides/[0-9]*.qmd"
+    
+website:
+  page-navigation: true
+  title: "Public Health Data Tabulation with {gtsummary}"
+  description: "Homepage for the R for Public Health Workshop (MGIMS Sevagram)"
+  site-url: "https://cfm-workshops.quarto.pub/public-health-data-tabulation-with-gtsummary/"
+  favicon: "images/trans - gt.png"
+  
+  repo-url: https://github.com/drpakhare/r-workshop-mgims
+  repo-actions: [edit, issue]
+
+  open-graph: true
+  
+
+  page-footer:
+    left: "This page is built with ❤️ and [Quarto](https://quarto.org/). Adapted from [@statistishdan](https://twitter.com/statistishdan)"
+    background: "#5455D1"
+
+  sidebar:
+    background: "#5455D1"
+    logo: "images/trans - gt.png"
+    pinned: true
+    align: center
+    tools:
+      - icon: github
+        href: https://github.com/drpakhare/r-workshop-mgims
+        text: GitHub
+    style: docked
+    contents:
+     - href: index.qmd
+       text: Home
+     - href: material.qmd
+     - href: dataset.qmd
+     - href: license.qmd
+
+format:
+  html:
+    theme: [lumen, theme.scss]
+    toc: true
+    code-copy: true
+    code-overflow: scroll
+    mainfont: "Atkinson Hyperlegible"
+    highlight-style: a11y
+
+editor: source
+

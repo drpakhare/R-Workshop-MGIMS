@@ -1,0 +1,33 @@
+---
+title: "Public Health Data Tabulation with {gtsummary}"
+author: "Abhijit P Pakhare"
+footer:  "[Public Health Data Tabulation with {gtsummary})"
+logo: "images/gtsummary-logo.png"
+editor: source
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+    chalkboard: true
+    scrollable: true
+execute:
+  echo: true
+  output: asis
+  freeze: false
+---
+
+{{< include 00-setup.qmd >}}
+
+{{< include 01-background.qmd >}}
+
+{{< include 02-trial.qmd >}}
+
+{{< include 03-tbl_summary.qmd >}}
+
+{{< include 04-tbl_regression.qmd >}}
+
+{{< include 06-tbl_merge.qmd >}}
+
+{{< include 09-summary.qmd >}}
+
